@@ -41,8 +41,8 @@ public class DetailsController : MonoBehaviour {
 	 **/
 	public void FillDetails(Configuration config) {
 		TitleText.text = config.Title;
-		CreationText.text = config.CreationDate + " " + config.CreationTime;
-		ModifiedText.text = config.ModifiedDate + " " + config.ModifiedTime;
+		CreationText.text = config.CreationDateTime.ToString("G");
+		ModifiedText.text = config.ModifiedDateTime.ToString("G");
 		DescriptionText.text = config.Description;
 		Show ();
 	}

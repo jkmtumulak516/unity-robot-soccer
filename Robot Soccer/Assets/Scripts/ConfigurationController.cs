@@ -17,7 +17,7 @@ public class ConfigurationController : MonoBehaviour {
 		DetailsCommunicator = GameObject.FindGameObjectWithTag ("DetailsPanel").GetComponent<DetailsController> ();
 		AutoLocalScale = new Vector3( 1.0f, 1.0f, 1.0f );
 		SavedConfigsPath = Directory.GetCurrentDirectory () + "\\Saved";
-		string[] configsPath = Directory.GetFiles (SavedConfigsPath, "*.fuz", SearchOption.TopDirectoryOnly);
+		string[] configsPath = Directory.GetFiles (SavedConfigsPath, "*.config", SearchOption.TopDirectoryOnly);
 
 		ParseConfigs (configsPath);
 
@@ -33,7 +33,7 @@ public class ConfigurationController : MonoBehaviour {
 		ConfigList = new Configuration[configsPath.Length];
 		int index = 0;
 		foreach (string path in configsPath) {
-			ConfigList [index] = Configuration.Parse (path);
+			ConfigList [index] = Configuration.Deserialize (path);
 			index = index + 1;
 		}
 	}
