@@ -13,10 +13,12 @@ public class CreateSimulationController : MonoBehaviour {
     public Slider PlayerNoSlider;
     public Dropdown StrategyDrop;
     public Dropdown ActionDrop;
-
+    GameObject SimulationManager;
     // Use this for initialization
     void Start () {
         CreateButton.onClick.AddListener(delegate { CreateSimulation(); });
+        SimulationManager = GameObject.Find("SimulationManager");
+
 	}
 	
 	// Update is called once per frame
@@ -34,5 +36,11 @@ public class CreateSimulationController : MonoBehaviour {
         c.NumberOfRobots = (int) PlayerNoSlider.value;
 
         Configuration.Serialize(Directory.GetCurrentDirectory() + "\\Saved\\" + c.Title + ".config", c);
+
+        SimulationManager.GetComponent<SimulationManagerController>().SetConfiguration(c, StrategyDrop.value, ActionDrop.value);
+
+        Debug.Log("Successfully Created Simulation");
+
+
     }
 }

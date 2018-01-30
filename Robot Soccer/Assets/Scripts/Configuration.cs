@@ -53,4 +53,16 @@ public class Configuration
         }
     }
 
+    public override string ToString()
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.AppendLine(Title);
+        sb.AppendLine(Description);
+        sb.AppendLine(CreationDateTime.ToString("G"));
+        sb.AppendLine(ModifiedDateTime.ToString("G"));
+        sb.AppendLine(NumberOfRobots + "");
+
+        return sb.ToString();
+    }
+
 }
