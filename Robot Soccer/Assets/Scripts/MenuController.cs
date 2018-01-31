@@ -19,7 +19,7 @@ public class MenuController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        HideIfClickedOutside(SidePanel);
+        //HideIfClickedOutside(SidePanel);
 	}
 
     void TogglePanel()
