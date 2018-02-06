@@ -20,6 +20,7 @@ public class CameraController : MonoBehaviour {
         LeftButton.onClick.AddListener(delegate { SwitchCamera(0); });
         TopButton.onClick.AddListener(delegate { SwitchCamera(1); });
         RightButton.onClick.AddListener(delegate { SwitchCamera(2); });
+        SwitchCamera(1);
     }
 	
 	// Update is called once per frame

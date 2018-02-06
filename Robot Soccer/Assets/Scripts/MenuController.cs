@@ -25,6 +25,7 @@ public class MenuController : MonoBehaviour {
     void TogglePanel()
     {
         SidePanelAnimator.SetTrigger(PanelTriggerHash);
+        Debug.Log("Toggle menu");
     }
 
     private void HideIfClickedOutside(GameObject panel)
