@@ -38,5 +38,6 @@ public class SimulationManagerController : MonoBehaviour {
         this.ActionInitMode = Action;
         IsFirstInitialization = true;
         Debug.Log("Received Configuration\n" + c.ToString());
+        
     }
 }

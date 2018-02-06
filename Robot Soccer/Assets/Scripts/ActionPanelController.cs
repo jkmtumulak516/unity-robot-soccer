@@ -12,7 +12,8 @@ public class ActionPanelController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		CreateButton.onClick.AddListener (delegate {CreateOnClick(); });
-	}
+        LoadButton.onClick.AddListener(delegate { PlayingFieldOnClick();  });
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -26,4 +27,9 @@ public class ActionPanelController : MonoBehaviour {
 	void CreateOnClick() {
 		ChangedScene ("CreateSimulationMenu");
 	}
+
+    void PlayingFieldOnClick()
+    {
+        ChangedScene("PlayingField");
+    }
 }

@@ -11,7 +11,7 @@ public class ConfigurationController : MonoBehaviour {
 	Configuration[] ConfigList;
 	string SavedConfigsPath;
 	DetailsController DetailsCommunicator;
-
+     SimulationManagerController SMC;
 	// Use this for initialization
 	void Start () {
 		DetailsCommunicator = GameObject.FindGameObjectWithTag ("DetailsPanel").GetComponent<DetailsController> ();
@@ -24,6 +24,8 @@ public class ConfigurationController : MonoBehaviour {
 		foreach (Configuration c in ConfigList) {
 			GenerateElement (c);
 		}
+
+        SMC = GameObject.Find("SimulationManager").GetComponent<SimulationManagerController>();
 	}
 
 	/**
@@ -45,7 +47,7 @@ public class ConfigurationController : MonoBehaviour {
 	private void GenerateElement(Configuration config) {
 		// Instantiates the prefab
 		GameObject element = (GameObject)Instantiate(Resources.Load("ConfigElement"));
-
+        
 		element.transform.SetParent (this.transform, false);
 		element.transform.localScale = AutoLocalScale;
 		element.transform.localPosition = Vector3.zero;
@@ -59,8 +61,10 @@ public class ConfigurationController : MonoBehaviour {
 	 * to DetailsController for rendering.
 	 **/
 	public void DetailsTrigger(int index) {
-		DetailsCommunicator.FillDetails (ConfigList [index]);
-	}
+        DetailsCommunicator.FillDetails(ConfigList[index]);
+        SMC.c = ConfigList[index];
+
+    }
 	
 	// Update is called once per frame
 	void Update () {

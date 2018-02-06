@@ -267,13 +267,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1216868070922568}
-  m_LocalRotation: {x: 0.23410906, y: -0, z: -0, w: 0.97221035}
-  m_LocalPosition: {x: 0.55, y: 4.51, z: -2.28}
+  m_LocalRotation: {x: 0.22414649, y: -0, z: -0, w: 0.9745555}
+  m_LocalPosition: {x: 0.55, y: 6.44, z: -6.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4800268070918532}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 27.078001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 25.905, y: 0, z: 0}
 --- !u!4 &4645120821600664
 Transform:
   m_ObjectHideFlags: 1
@@ -297,8 +297,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1179990279731888}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.306, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 5, z: 17.13}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4511203266983056}
   - {fileID: 4026790754089702}
@@ -369,7 +369,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 0d66261e6af1ccb45b69989fe7175218, type: 2}
+  - {fileID: 2100000, guid: aa3c0aa77fcebda4ba655af5312f9594, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -526,7 +526,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1179990279731888}
   serializedVersion: 2
-  m_Mass: 1000
+  m_Mass: 200
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -568,9 +568,11 @@ MonoBehaviour:
     leftWheel: {fileID: 146055299741246190}
     rightWheel: {fileID: 146815109857094452}
     motor: 1
-  maxMotorTorque: 30
+  maxMotorTorque: 50
   leftMotorTorque: 0
-  rightMotorTorque: 30
+  rightMotorTorque: 0
+  leftWheel: {fileID: 1161110931495414}
+  rightWheel: {fileID: 1587771241742894}
 --- !u!124 &124254117936681868
 Behaviour:
   m_ObjectHideFlags: 1
