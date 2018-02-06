@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CreateSimulationController : MonoBehaviour {
@@ -41,6 +42,7 @@ public class CreateSimulationController : MonoBehaviour {
 
         Debug.Log("Successfully Created Simulation");
 
+        SceneManager.LoadScene("PlayingField");
 
     }
 }
