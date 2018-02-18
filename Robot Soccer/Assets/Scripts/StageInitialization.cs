@@ -22,7 +22,7 @@ public class StageInitialization : MonoBehaviour {
     // Use this for initialization
     void Start () {
         InitPositionDict();
-        SMController = GameObject.Find("SimulationManager").GetComponent<ConfigurationHolder>();
+        SMController = GameObject.Find("ConfigurationHolder").GetComponent<ConfigurationHolder>();
         Vector3[] pos;
         Positions.TryGetValue(SMController.c.NumberOfRobots, out pos);
 

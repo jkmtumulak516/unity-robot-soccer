@@ -25,7 +25,7 @@ public class ConfigurationController : MonoBehaviour {
 			GenerateElement (c);
 		}
 
-        SMC = GameObject.Find("SimulationManager").GetComponent<ConfigurationHolder>();
+        SMC = GameObject.Find("ConfigurationHolder").GetComponent<ConfigurationHolder>();
 	}
 
 	/**
