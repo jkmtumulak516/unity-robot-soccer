@@ -13,4 +13,29 @@ public class SimulationManager : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void Initialize()
+    {
+
+    }
+
+    public void StartSimulation()
+    {
+
+    }
+
+    public void PauseSimulation()
+    {
+
+    }
+
+    public void ResetSimulation()
+    {
+
+    }
+
+    public void StopSimulation()
+    {
+
+    }
 }

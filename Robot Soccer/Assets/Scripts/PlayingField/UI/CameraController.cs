@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Game;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,6 +18,25 @@ public class CameraController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        ConfigurationHolder ConfigurationHolder = GameObject.Find("ConfigurationHolder").GetComponent<ConfigurationHolder>();
+
+        switch (ConfigurationHolder.c.NumberOfRobots)
+        {
+            case 5:
+                TopViewCamera.transform.position = League.Middle.TopCameraPosition;
+                RightRingCamera.transform.position = League.Middle.RightCameraPosition;
+                LeftRingCamera.transform.position = League.Middle.LeftCameraPosition;
+                break;
+
+            case 11:
+                TopViewCamera.transform.position = League.Large.TopCameraPosition;
+                RightRingCamera.transform.position = League.Large.RightCameraPosition;
+                LeftRingCamera.transform.position = League.Large.LeftCameraPosition;
+                break;
+
+        }
+
+
         LeftButton.onClick.AddListener(delegate { SwitchCamera(0); });
         TopButton.onClick.AddListener(delegate { SwitchCamera(1); });
         RightButton.onClick.AddListener(delegate { SwitchCamera(2); });

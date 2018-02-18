@@ -32,6 +32,10 @@ namespace Assets.Scripts.Game
 
             public static Vector3 Scale = new Vector3(180f, 0.9f, 220f);
             public static int CenterCirleRadius = 25;
+
+            public static Vector3 TopCameraPosition = new Vector3(-488.0269f, 2.7f, -70.7f);
+            public static Vector3 LeftCameraPosition = new Vector3(-487.4268f, -185.4746f, 73f);
+            public static Vector3 RightCameraPosition = new Vector3(-487.4268f, -185.4746f, -215.4f);
         }
 
         public class Large
@@ -52,6 +56,10 @@ namespace Assets.Scripts.Game
 
             public static Vector3 Scale = new Vector3(280f, 0.9f, 400f);
             public static int CenterCirleRadius = 70;
+
+            public static Vector3 TopCameraPosition = new Vector3(-488.0269f, 101.7f, -70.7f);
+            public static Vector3 LeftCameraPosition = new Vector3(-487.4268f, -166.8f, 191.3f);
+            public static Vector3 RightCameraPosition = new Vector3(-487.4268f, -166.8f, -333.9f);
         }
     }
 }
