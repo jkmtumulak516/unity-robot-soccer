@@ -23,15 +23,15 @@ public class CameraController : MonoBehaviour {
         switch (ConfigurationHolder.c.NumberOfRobots)
         {
             case 5:
-                TopViewCamera.transform.position = League.Middle.TopCameraPosition;
-                RightRingCamera.transform.position = League.Middle.RightCameraPosition;
-                LeftRingCamera.transform.position = League.Middle.LeftCameraPosition;
+                TopViewCamera.transform.localPosition = League.Middle.TopCameraPosition;
+                RightRingCamera.transform.localPosition = League.Middle.RightCameraPosition;
+                LeftRingCamera.transform.localPosition = League.Middle.LeftCameraPosition;
                 break;
 
             case 11:
-                TopViewCamera.transform.position = League.Large.TopCameraPosition;
-                RightRingCamera.transform.position = League.Large.RightCameraPosition;
-                LeftRingCamera.transform.position = League.Large.LeftCameraPosition;
+                TopViewCamera.transform.localPosition = League.Large.TopCameraPosition;
+                RightRingCamera.transform.localPosition = League.Large.RightCameraPosition;
+                LeftRingCamera.transform.localPosition = League.Large.LeftCameraPosition;
                 break;
 
         }

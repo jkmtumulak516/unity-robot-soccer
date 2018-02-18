@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class SimulationManager : MonoBehaviour {
 
+    public GameObject RedTeam;
+    public GameObject BlueTeam;
+
+    ConfigurationHolder ConfigurationHolder;
+
 	// Use this for initialization
 	void Start () {
-		
+        ConfigurationHolder = GameObject.Find("ConfigurationHolder").GetComponent<ConfigurationHolder>();
+        Initialize();
 	}
 	
 	// Update is called once per frame
@@ -16,7 +22,8 @@ public class SimulationManager : MonoBehaviour {
 
     public void Initialize()
     {
-
+        RedTeam.GetComponent<TeamController>().Initialize(RobotCarController.TEAM.RED, ConfigurationHolder.c.NumberOfRobots);
+        BlueTeam.GetComponent<TeamController>().Initialize(RobotCarController.TEAM.BLUE, ConfigurationHolder.c.NumberOfRobots);
     }
 
     public void StartSimulation()

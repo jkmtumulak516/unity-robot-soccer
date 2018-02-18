@@ -26,8 +26,8 @@ public class StageInitialization : MonoBehaviour {
                 CenterCircle.GetComponent<CircleScript>().radius = League.Middle.CenterCirleRadius;
                 break;
             case 11:
-                Floor.transform.localScale = League.Middle.Scale;
-                CenterCircle.GetComponent<CircleScript>().radius = League.Middle.CenterCirleRadius;
+                Floor.transform.localScale = League.Large.Scale;
+                CenterCircle.GetComponent<CircleScript>().radius = League.Large.CenterCirleRadius;
                 break;
         }
 
