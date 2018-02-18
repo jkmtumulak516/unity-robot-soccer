@@ -41,7 +41,6 @@ public class StageInitialization : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 
     private void InitPositionDict()
