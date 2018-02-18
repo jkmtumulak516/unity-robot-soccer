@@ -1739,7 +1739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bba79ffb73a3a2c4799552461546a875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 75
+  radius: 20
   numSegments: 256
 --- !u!120 &908731062
 LineRenderer:

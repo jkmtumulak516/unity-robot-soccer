@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StageInitialization : MonoBehaviour {
     Dictionary<int, Vector3[]> Positions;
-    SimulationManagerController SMController;
+    ConfigurationHolder SMController;
 
     //Positions
     Vector3 _goalie = new Vector3(0, 2, 65.33f);
@@ -22,7 +22,7 @@ public class StageInitialization : MonoBehaviour {
     // Use this for initialization
     void Start () {
         InitPositionDict();
-        SMController = GameObject.Find("SimulationManager").GetComponent<SimulationManagerController>();
+        SMController = GameObject.Find("SimulationManager").GetComponent<ConfigurationHolder>();
         Vector3[] pos;
         Positions.TryGetValue(SMController.c.NumberOfRobots, out pos);
 

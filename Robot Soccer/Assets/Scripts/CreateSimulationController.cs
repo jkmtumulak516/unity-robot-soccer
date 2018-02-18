@@ -14,11 +14,11 @@ public class CreateSimulationController : MonoBehaviour {
     public Slider PlayerNoSlider;
     public Dropdown StrategyDrop;
     public Dropdown ActionDrop;
-    GameObject SimulationManager;
+    GameObject ConfigurationHolder;
     // Use this for initialization
     void Start () {
         CreateButton.onClick.AddListener(delegate { CreateSimulation(); });
-        SimulationManager = GameObject.Find("SimulationManager");
+        ConfigurationHolder = GameObject.Find("ConfigurationHolder");
 
 	}
 	
@@ -38,7 +38,7 @@ public class CreateSimulationController : MonoBehaviour {
 
         Configuration.Serialize(Directory.GetCurrentDirectory() + "\\Saved\\" + c.Title + ".config", c);
 
-        SimulationManager.GetComponent<SimulationManagerController>().SetConfiguration(c, StrategyDrop.value, ActionDrop.value);
+        ConfigurationHolder.GetComponent<ConfigurationHolder>().SetConfiguration(c, StrategyDrop.value, ActionDrop.value);
 
         Debug.Log("Successfully Created Simulation");
 

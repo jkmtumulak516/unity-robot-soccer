@@ -11,7 +11,7 @@ public class ConfigurationController : MonoBehaviour {
 	Configuration[] ConfigList;
 	string SavedConfigsPath;
 	DetailsController DetailsCommunicator;
-     SimulationManagerController SMC;
+     ConfigurationHolder SMC;
 	// Use this for initialization
 	void Start () {
 		DetailsCommunicator = GameObject.FindGameObjectWithTag ("DetailsPanel").GetComponent<DetailsController> ();
@@ -25,7 +25,7 @@ public class ConfigurationController : MonoBehaviour {
 			GenerateElement (c);
 		}
 
-        SMC = GameObject.Find("SimulationManager").GetComponent<SimulationManagerController>();
+        SMC = GameObject.Find("SimulationManager").GetComponent<ConfigurationHolder>();
 	}
 
 	/**
