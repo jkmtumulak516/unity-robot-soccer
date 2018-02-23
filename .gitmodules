@@ -1,0 +1,6 @@
+[submodule "Robot Soccer/fuzzy-evolution"]
+	path = Robot Soccer/fuzzy-evolution
+	url = https://github.com/jkmtumulak516/fuzzy-evolution.git
+[submodule "Robot Soccer/Modules/fuzzy-evolution"]
+	path = Robot Soccer/Modules/fuzzy-evolution
+	url = https://github.com/jkmtumulak516/fuzzy-evolution.git
