@@ -32,8 +32,8 @@ public class RobotCarController : MonoBehaviour {
 			axleInfo.rightWheel.motorTorque = rightMotor;
         }
 
-        //leftWheel.transform.Rotate(0,axleInfo.leftWheel.rpm / 60 * 360 * Time.deltaTime, 0);
-        //rightWheel.transform.Rotate(0,axleInfo.rightWheel.rpm / 60 * 360 * Time.deltaTime, 0);
+        leftWheel.transform.Rotate(0, axleInfo.leftWheel.rpm / 60 * 360 * Time.deltaTime, 0);
+        rightWheel.transform.Rotate(0, axleInfo.rightWheel.rpm / 60 * 360 * Time.deltaTime, 0);
 
     }
 
