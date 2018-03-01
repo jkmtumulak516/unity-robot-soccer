@@ -18,7 +18,9 @@ public class Configuration
 	public DateTime ModifiedDateTime { get; set;}
 	public string Description { get; set;}
     public int NumberOfRobots { get; set;}
-    
+    public float FieldHeight { get; set; }
+    public float FieldWidth { get; set; }
+
     public Configuration()
     {
         Title = "Simulation";
@@ -26,7 +28,8 @@ public class Configuration
         ModifiedDateTime = DateTime.Now;
         Description = "This is a simulation";
         NumberOfRobots = 3;
-        
+        FieldHeight = 130f;
+        FieldWidth = 150f;
     }
     
     public static void Serialize(string file, Configuration c)
@@ -61,7 +64,8 @@ public class Configuration
         sb.AppendLine(CreationDateTime.ToString("G"));
         sb.AppendLine(ModifiedDateTime.ToString("G"));
         sb.AppendLine(NumberOfRobots + "");
-
+        sb.AppendLine(FieldHeight + "");
+        sb.AppendLine(FieldWidth + "");
         return sb.ToString();
     }
 

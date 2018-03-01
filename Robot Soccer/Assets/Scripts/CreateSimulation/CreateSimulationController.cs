@@ -38,12 +38,18 @@ public class CreateSimulationController : MonoBehaviour {
         {
             case 0:
                 c.NumberOfRobots = 3;
+                c.FieldHeight = 130f;
+                c.FieldWidth = 150f;
                 break;
             case 1:
                 c.NumberOfRobots = 5;
+                c.FieldHeight = 180f;
+                c.FieldWidth = 220f;
                 break;
             case 2:
                 c.NumberOfRobots = 11;
+                c.FieldHeight = 280f;
+                c.FieldWidth = 400f;
                 break;
         }
 
