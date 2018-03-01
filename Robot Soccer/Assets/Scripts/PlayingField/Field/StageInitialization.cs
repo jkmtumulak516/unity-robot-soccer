@@ -32,18 +32,6 @@ public class StageInitialization : MonoBehaviour {
         }
 
 
-
-        //for (int i = 0; i < SMController.c.NumberOfRobots; i++)
-        //{
-        //    var rc = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), pos[i], Quaternion.Euler(0, 180, 0));
-        //    rc.GetComponent<RobotCarController>().Initialize(RobotCarController.TEAM.RED);
-        //}
-        //for (int i = 0; i < SMController.c.NumberOfRobots; i++)
-        //{
-        //    var rc = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(pos[i].x, pos[i].y, -pos[i].z), Quaternion.identity);
-        //    rc.GetComponent<RobotCarController>().Initialize(RobotCarController.TEAM.BLUE);
-        //}
-
     }
 	
 	// Update is called once per frame

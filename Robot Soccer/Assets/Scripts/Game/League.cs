@@ -11,9 +11,9 @@ namespace Assets.Scripts.Game
         public class Small
         {
             
-            public static Vector3 GoaliePosition = new Vector3(0, 2, 65.33f);
-            public static Vector3 DefenderPosition = new Vector3(0, 2, 48.7f);
-            public static Vector3 ForwardPosition = new Vector3(0, 2, 14.04f);
+            public static Vector3 GoaliePosition = new Vector3(0, 3, 65.33f);
+            public static Vector3 DefenderPosition = new Vector3(0, 3, 48.7f);
+            public static Vector3 ForwardPosition = new Vector3(0, 3, 14.04f);
 
             public static Vector3 Scale = new Vector3(130f, 0.9f, 150f);
             public static int CenterCirleRadius = 20;
@@ -21,9 +21,9 @@ namespace Assets.Scripts.Game
 
         public class Middle
         {
-            public static Vector3 GoaliePosition = new Vector3(0, 2, 95f);
-            public static Vector3 DefenderPosition = new Vector3(0, 2, 70f);
-            public static Vector3 ForwardPosition = new Vector3(0, 2, 20f);
+            public static Vector3 GoaliePosition = new Vector3(0, 3, 95f);
+            public static Vector3 DefenderPosition = new Vector3(0, 3, 70f);
+            public static Vector3 ForwardPosition = new Vector3(0, 3, 20f);
             public static Vector3[] MidfielderPosition = {
                  new Vector3(40, 2, 50f),
                  new Vector3(-40, 2, 50f),
@@ -42,20 +42,20 @@ namespace Assets.Scripts.Game
            
             public static Vector3 GoaliePosition = new Vector3(0, 2, 175f);
             public static Vector3[] DefenderPosition = {
-                new Vector3(50, 2, 125f),
-                new Vector3(0, 2, 140f),
-                new Vector3(-50, 2, 125f),
+                new Vector3(50, 3, 125f),
+                new Vector3(0, 3, 140f),
+                new Vector3(-50, 3, 125f),
             };
             public static Vector3[] ForwardPosition = {
-                new Vector3(0, 2, 30f),
-                new Vector3(50, 2, 30f),
-                new Vector3(-50, 2, 30f),
+                new Vector3(0, 3, 30f),
+                new Vector3(50, 3, 30f),
+                new Vector3(-50, 3, 30f),
             };
             public static Vector3[] MidfielderPosition = {
-                 new Vector3(25, 2, 85f),
-                new Vector3(-25, 2, 85f),
-                new Vector3(75, 2, 85f),
-                new Vector3(-75, 2, 85f),
+                 new Vector3(25, 3, 85f),
+                new Vector3(-25, 3, 85f),
+                new Vector3(75, 3, 85f),
+                new Vector3(-75, 3, 85f),
             };
 
             public static Vector3 Scale = new Vector3(280f, 0.9f, 400f);
