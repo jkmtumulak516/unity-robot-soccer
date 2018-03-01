@@ -603,7 +603,7 @@ PlayerSettings:
   cloudServicesEnabled:
     UNet: 1
   facebookSdkVersion: 7.9.4
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 3
   cloudProjectId: 27da58bf-2195-4c11-9e87-4f7ea34ef767
   projectName: Robot Soccer (1)
   organizationId: jhon-christian-ambrad
