@@ -112,4 +112,12 @@ public class TeamController : MonoBehaviour {
                 break;
         }
     }
+
+    public void DeleteAllChildren()
+    {
+        foreach(Transform children in this.transform)
+        {
+            Destroy(children.gameObject);
+        }
+    }
 }

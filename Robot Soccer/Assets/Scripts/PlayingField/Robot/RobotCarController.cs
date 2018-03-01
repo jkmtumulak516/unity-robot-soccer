@@ -18,8 +18,11 @@ public class RobotCarController : MonoBehaviour {
 
     public float DestX = 0;
     public float DestY = 0;
+
+    SimulationManager simulationManager;
 	// Use this for initialization
 	void Start () {
+        simulationManager = GameObject.Find("SimulationManager").GetComponent<SimulationManager>();
         DestX = this.transform.position.x;
         DestY = this.transform.position.z;
         Driver = new Driver(this);
@@ -37,20 +40,22 @@ public class RobotCarController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        Driver.Process(DestX, DestY);
+        if (simulationManager.IsStart) { 
+            Driver.Process(DestX, DestY);
 
-        leftMotorTorque = Driver.LeftTorque;
-        rightMotorTorque = Driver.RightTorque;
+            leftMotorTorque = Driver.LeftTorque;
+            rightMotorTorque = Driver.RightTorque;
 
-		float leftMotor = maxMotorTorque * leftMotorTorque;
-		float rightMotor = maxMotorTorque * rightMotorTorque;
-		if (axleInfo.motor) {
-			axleInfo.leftWheel.motorTorque = leftMotor;
-			axleInfo.rightWheel.motorTorque = rightMotor;
-		}
+		    float leftMotor = maxMotorTorque * leftMotorTorque;
+		    float rightMotor = maxMotorTorque * rightMotorTorque;
+		    if (axleInfo.motor) {
+			    axleInfo.leftWheel.motorTorque = leftMotor;
+			    axleInfo.rightWheel.motorTorque = rightMotor;
+		    }
 
-        //leftWheel.transform.Rotate(0,axleInfo.leftWheel.rpm / 60 * 360 * Time.deltaTime, 0);
-        //rightWheel.transform.Rotate(0,axleInfo.rightWheel.rpm / 60 * 360 * Time.deltaTime, 0);
+                //leftWheel.transform.Rotate(0,axleInfo.leftWheel.rpm / 60 * 360 * Time.deltaTime, 0);
+                //rightWheel.transform.Rotate(0,axleInfo.rightWheel.rpm / 60 * 360 * Time.deltaTime, 0);
+        }
 
     }
 
