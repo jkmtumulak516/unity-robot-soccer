@@ -22,7 +22,8 @@ public class RobotCarController : MonoBehaviour {
 	void Start () {
         DestX = this.transform.position.x;
         DestY = this.transform.position.z;
-	}
+        Driver = new Driver(this);
+    }
 
     public void Initialize(TeamController team)
     {
@@ -31,7 +32,7 @@ public class RobotCarController : MonoBehaviour {
         if(Team.team == TEAM.RED)
             this.transform.GetChild(1).gameObject.GetComponent<Renderer>().material = Resources.Load<Material>("Material/RedTeamMaterial");
 
-        Driver = new Driver(this);
+        
     }
 	
 	// Update is called once per frame
@@ -48,8 +49,8 @@ public class RobotCarController : MonoBehaviour {
 			axleInfo.rightWheel.motorTorque = rightMotor;
 		}
 
-        leftWheel.transform.Rotate(0,axleInfo.leftWheel.rpm / 60 * 360 * Time.deltaTime, 0);
-        rightWheel.transform.Rotate(0,axleInfo.rightWheel.rpm / 60 * 360 * Time.deltaTime, 0);
+        //leftWheel.transform.Rotate(0,axleInfo.leftWheel.rpm / 60 * 360 * Time.deltaTime, 0);
+        //rightWheel.transform.Rotate(0,axleInfo.rightWheel.rpm / 60 * 360 * Time.deltaTime, 0);
 
     }
 

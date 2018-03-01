@@ -22,7 +22,7 @@ public class LeftWheelFLS
     public LeftWheelFLS()
     {
         angle = new RelativeAngle(1);
-        distance = new Distance(2, GameObject.Find("ConfigurationHolder").GetComponent<ConfigurationHolder>().c.FieldWidth);
+        distance = new Distance(2);
         torque = new Torque(3);
         listInput = new List<FuzzySet<IInputFuzzyMember>>() { angle, distance };
         var rules = CreateRules();

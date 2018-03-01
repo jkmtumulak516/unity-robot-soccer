@@ -5,15 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Assets.Scripts.FuzzyLogic.RobotMovement.FuzzySets
 {
     class Distance : FuzzySet<IInputFuzzyMember>
     {
-        float Max; 
-        public Distance(int category, float Max) : base(category)
+        public Distance(int category) : base(category)
         {
-            this.Max = Max;
         }
 
         private IInputFuzzyMember _very_near;
@@ -27,8 +26,8 @@ namespace Assets.Scripts.FuzzyLogic.RobotMovement.FuzzySets
         protected override ICollection<IInputFuzzyMember> InitializeMembers()
         {
             List<IInputFuzzyMember> collection = new List<IInputFuzzyMember>();
-
-            var increment = Max / 5;
+            var gm = GameObject.Find("ConfigurationHolder").GetComponent<ConfigurationHolder>();
+            var increment = gm.c.FieldWidth / 5;
             var peak = 0f;
             var halfWidth = increment / 2;
 
