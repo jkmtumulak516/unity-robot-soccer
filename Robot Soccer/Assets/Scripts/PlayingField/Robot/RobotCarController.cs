@@ -1,25 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static TeamController;
 
 public class RobotCarController : MonoBehaviour {
-    public enum TEAM : int { BLUE, RED };
 	public AxleInfo axleInfo; 
 	public float maxMotorTorque; // maximum torque the motor can apply to wheel
 	public float leftMotorTorque;
 	public float rightMotorTorque;
+
     public GameObject leftWheel;
     public GameObject rightWheel;
-    public TEAM Team;
+    
+    public TeamController Team;
 	// Use this for initialization
 	void Start () {
 	}
 
-    public void Initialize(TEAM team)
+    public void Initialize(TeamController team)
     {
         Team = team;
 
-        if(team == TEAM.RED)
+        if(Team.team == TEAM.RED)
             this.transform.GetChild(1).gameObject.GetComponent<Renderer>().material = Resources.Load<Material>("Material/RedTeamMaterial");
     }
 	

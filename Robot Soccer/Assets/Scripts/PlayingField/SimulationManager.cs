@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static TeamController;
 
 public class SimulationManager : MonoBehaviour {
 
@@ -22,8 +23,8 @@ public class SimulationManager : MonoBehaviour {
 
     public void Initialize()
     {
-        RedTeam.GetComponent<TeamController>().Initialize(RobotCarController.TEAM.RED, ConfigurationHolder.c.NumberOfRobots);
-        BlueTeam.GetComponent<TeamController>().Initialize(RobotCarController.TEAM.BLUE, ConfigurationHolder.c.NumberOfRobots);
+        RedTeam.GetComponent<TeamController>().Initialize(TEAM.RED, ConfigurationHolder.c.NumberOfRobots);
+        BlueTeam.GetComponent<TeamController>().Initialize(TEAM.BLUE, ConfigurationHolder.c.NumberOfRobots);
     }
 
     public void StartSimulation()
