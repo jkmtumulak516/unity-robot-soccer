@@ -28,7 +28,7 @@ public class GameStateController : MonoBehaviour {
         var ND = ((nearestBlue.transform.position - Ball.transform.position).sqrMagnitude - (nearestRed.transform.position - Ball.transform.position).sqrMagnitude);
 
         //Orientation of the blue robot from the ball
-        var O = Angle.ComputeRelativeAngle(nearestBlue.transform.eulerAngles.y, nearestBlue.transform.position.x, nearestBlue.transform.position.z, Ball.transform.position.x, Ball.transform.position.z);
+        var O = System.Math.Abs(Angle.ComputeRelativeAngle(nearestBlue.transform.eulerAngles.y, nearestBlue.transform.position.x, nearestBlue.transform.position.z, Ball.transform.position.x, Ball.transform.position.z));
 
         //Calculated distance of the ball from the red goal
         var D = Vector3.Distance(Ball.transform.position, BlueTeam.OpponentGoal.transform.position);
