@@ -21,15 +21,20 @@ public class GameStateController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         NearestBlue = BlueTeam.GetClosestFromBall();
         NearestRed = RedTeam.GetClosestFromBall();
+
+        var blueState = GetStateBlue();
+        var redState = GetStateRed();
+
+        //Debug.Log("Blue : " + blueState + " ||||   Red : " + redState);
     }
     
     float GetStateBlue()
     {
         //Difference of the nearest distances between blue and red robots from ball
-        var ND = ((NearestBlue.transform.position - Ball.transform.position).sqrMagnitude - (NearestRed.transform.position - Ball.transform.position).sqrMagnitude);
+        var ND = (Vector3.Distance(NearestBlue.transform.position , Ball.transform.position) - Vector3.Distance(NearestRed.transform.position , Ball.transform.position));
 
         //Orientation of the blue robot from the ball
         var O = (float) System.Math.Abs(Angle.ComputeRelativeAngle(NearestBlue.transform.eulerAngles.y, NearestBlue.transform.position.x, NearestBlue.transform.position.z, Ball.transform.position.x, Ball.transform.position.z));
@@ -45,7 +50,7 @@ public class GameStateController : MonoBehaviour {
     float GetStateRed()
     {
         //Difference of the nearest distances between red and blue robots from ball
-        var ND = ((NearestRed.transform.position - Ball.transform.position).sqrMagnitude - (NearestBlue.transform.position - Ball.transform.position).sqrMagnitude);
+        var ND = (Vector3.Distance(NearestRed.transform.position , Ball.transform.position) - Vector3.Distance(NearestBlue.transform.position , Ball.transform.position));
 
         //Orientation of the red robot from the ball
         var O = (float) System.Math.Abs(Angle.ComputeRelativeAngle(NearestRed.transform.eulerAngles.y, NearestRed.transform.position.x, NearestRed.transform.position.z, Ball.transform.position.x, Ball.transform.position.z));

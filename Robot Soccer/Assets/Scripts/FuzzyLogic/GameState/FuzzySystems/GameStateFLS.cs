@@ -1,5 +1,8 @@
 ﻿using Assets.Scripts.FuzzyLogic.GameState.FuzzySets;
 using FuzzyLogicSystems.Core.Generic;
+using FuzzyLogicSystems.Core.Generic.Defuzzifier;
+using FuzzyLogicSystems.Core.Generic.Fuzzifier;
+using FuzzyLogicSystems.Core.Generic.RuleBase;
 using FuzzyLogicSystems.Core.Rules;
 using FuzzyLogicSystems.Core.Values;
 using System;
@@ -27,6 +30,11 @@ namespace Assets.Scripts.FuzzyLogic.GameState.FuzzySystems
             distanceGoal = new DistanceGoal(3);
             stateValue = new StateValue(4);
             listInput = new List<FuzzySet<IInputFuzzyMember>>() { orientation, distanceDifference, distanceGoal };
+
+            var rules = CreateRules();
+            var ruleBase = new EvaluationTreeRuleBase(listInput, stateValue, rules);
+
+            fls = new FuzzyLogicSystem(new Fuzzifier(), new CenterOfSumsDefuzzifier(), ruleBase);
 
         }
 
