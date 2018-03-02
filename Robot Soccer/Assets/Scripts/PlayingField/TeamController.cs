@@ -16,8 +16,7 @@ public class TeamController : MonoBehaviour {
     public List<GameObject> Midfielders;
     public List<GameObject> Forward;
     public GameObject Goalie;
-
-    RobotCarController prevNearest = null;
+    
 	// Use this for initialization
 	void Start () {
         
