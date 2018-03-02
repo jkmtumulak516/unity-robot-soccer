@@ -9,12 +9,15 @@ public class TeamController : MonoBehaviour {
     public GameObject Goal;
     public GameObject OpponentGoal;
 
+    public GameObject Ball;
+
     public TEAM team;
     public List<GameObject> Defenders;
     public List<GameObject> Midfielders;
     public List<GameObject> Forward;
     public GameObject Goalie;
 
+    RobotCarController prevNearest = null;
 	// Use this for initialization
 	void Start () {
         
@@ -22,9 +25,10 @@ public class TeamController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
+	void FixedUpdate () {
+       
+
+    }
 
     public void Initialize(TEAM teamColor, int noOfRobots )
     {
@@ -111,6 +115,58 @@ public class TeamController : MonoBehaviour {
 
                 break;
         }
+    }
+
+    //TODO Implement UpdateStrategy (Defense)
+    public void UpdateStrategy()
+    {
+
+    }
+
+    //TODO Implement UpdateStrategy (Offense with arbiter)
+    public void UpdateStrategy(RobotCarController arbiterRobot)
+    {
+
+    }
+
+    
+    public RobotCarController GetClosestFromBall()
+    {
+        var ballPosition = Ball.transform.position;
+        GameObject closest = Forward[0];
+        var prevMagnitude = (closest.transform.position - ballPosition).sqrMagnitude;
+
+        foreach (GameObject robot in Forward)
+        {
+            var diff = (robot.transform.position - ballPosition).sqrMagnitude;
+            if(diff < prevMagnitude)
+            {
+                closest = robot;
+                prevMagnitude = diff;
+            }
+        }
+
+        foreach (GameObject robot in Midfielders)
+        {
+            var diff = (robot.transform.position - ballPosition).sqrMagnitude;
+            if (diff < prevMagnitude)
+            {
+                closest = robot;
+                prevMagnitude = diff;
+            }
+        }
+
+        foreach (GameObject robot in Defenders)
+        {
+            var diff = (robot.transform.position - ballPosition).sqrMagnitude;
+            if (diff < prevMagnitude)
+            {
+                closest = robot;
+                prevMagnitude = diff;
+            }
+        }
+
+        return closest.GetComponent<RobotCarController>();
     }
 
     public void DeleteAllChildren()

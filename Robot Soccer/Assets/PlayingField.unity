@@ -783,6 +783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Goal: {fileID: 1581830945}
   OpponentGoal: {fileID: 1865718978}
+  Ball: {fileID: 1854074514}
   team: 0
   Defenders: []
   Midfielders: []
@@ -1876,6 +1877,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Goal: {fileID: 1865718978}
   OpponentGoal: {fileID: 1581830945}
+  Ball: {fileID: 1854074514}
   team: 0
   Defenders: []
   Midfielders: []
@@ -1936,6 +1938,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ec3e8f3ed27e2244caaedaf589590a03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1854074514 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1975457108487340, guid: ec3e8f3ed27e2244caaedaf589590a03,
+    type: 2}
+  m_PrefabInternal: {fileID: 1854074513}
 --- !u!1 &1865718978
 GameObject:
   m_ObjectHideFlags: 0
