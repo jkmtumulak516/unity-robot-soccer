@@ -11,7 +11,8 @@ public class RobotCarController : MonoBehaviour {
 
     public GameObject leftWheel;
     public GameObject rightWheel;
-    
+    public GameObject arbiterMarker;
+
     public TeamController Team;
 
     public Driver Driver;
@@ -57,6 +58,11 @@ public class RobotCarController : MonoBehaviour {
                 //rightWheel.transform.Rotate(0,axleInfo.rightWheel.rpm / 60 * 360 * Time.deltaTime, 0);
         }
 
+    }
+
+    public void ToggleArbiterMarker(bool active)
+    {
+        arbiterMarker.SetActive(active);
     }
 
     

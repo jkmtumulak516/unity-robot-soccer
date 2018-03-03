@@ -27,7 +27,7 @@ namespace Assets.Scripts.FuzzyLogic.RobotMovement.FuzzySets
         {
             List<IInputFuzzyMember> collection = new List<IInputFuzzyMember>();
             var gm = GameObject.Find("ConfigurationHolder").GetComponent<ConfigurationHolder>();
-            var increment = gm.c.FieldWidth / 5;
+            var increment = gm.c.FieldWidth / 4;
             var peak = 0f;
             var halfWidth = increment / 2;
 
