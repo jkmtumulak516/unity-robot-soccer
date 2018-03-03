@@ -16,6 +16,7 @@ public class SimulationManager : MonoBehaviour {
     public bool IsStart = false;
     public bool IsPaused = false;
 
+    public float TimeScale = 1f;
 
     ConfigurationHolder ConfigurationHolder;
 
@@ -46,11 +47,12 @@ public class SimulationManager : MonoBehaviour {
         PlayButton.interactable = false;
         PauseButton.interactable = true;
         StopButton.interactable = true;
-
+        
         if (IsPaused) {
             IsPaused = false;
-            Time.timeScale = 1f;
         }
+
+        Time.timeScale = TimeScale;
         IsStart = true;
     }
 
