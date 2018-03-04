@@ -38,7 +38,7 @@ namespace Assets.Scripts.FuzzyLogic.GameState.FuzzySystems
 
         }
 
-        public IList<ParentRule> CreateRules()
+        public List<ParentRule> CreateRules()
         {
             var listOfRules = new List<ParentRule>();
             var builder = new RuleBuilder();

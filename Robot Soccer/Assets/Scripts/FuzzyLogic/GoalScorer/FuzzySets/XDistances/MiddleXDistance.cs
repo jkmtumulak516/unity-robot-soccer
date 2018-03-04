@@ -1,0 +1,27 @@
+﻿using FuzzyLogicSystems.Core.Values;
+using FuzzyLogicSystems.Core.Values.Generic;
+using System.Collections.Generic;
+
+namespace Assets.Scripts.FuzzyLogic.GoalScorer.FuzzySets.XDistances
+{
+    public class MiddleXDistance : GoalXDistance
+    {
+        public MiddleXDistance(int category) : base(category) { }
+
+        // TODO: redo the values here
+        protected override ICollection<IInputFuzzyMember> InitializeMembers()
+        {
+            var members = new HashSet<IInputFuzzyMember>();
+
+            _inside = new LinearInput("Inside", this, 0f, true, false, 3f, 0f);
+            _close = new LinearInput("Close", this, 3f, false, false, 3f, 0f);
+            _far = new LinearInput("Far", this, 6f, false, true, 3f, 0f);
+
+            members.Add(_close);
+            members.Add(_inside);
+            members.Add(_far);
+
+            return members;
+        }
+    }
+}
