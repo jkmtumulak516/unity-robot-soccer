@@ -1900,7 +1900,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Output: 0
+  InputX: 0
+  InputY: 0
+  GoalX: 0
+  GoalY: 0
+  BallX: 0
+  BallY: 0
   Ball: {fileID: 1854074514}
+--- !u!1 &1811610549 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1257835528010480, guid: 196147798b38f4249b8b17b2ed8b788b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1811610546}
+--- !u!114 &1811610550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1811610549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb8fd0060ec2713439e80bbc724ad671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Output: 0
+  InputX: 0
+  InputY: 0
+  GoalX: 0
+  GoalY: 0
+  BallX: 0
+  BallY: 0
+  Ball: {fileID: 0}
 --- !u!1 &1829625074
 GameObject:
   m_ObjectHideFlags: 0

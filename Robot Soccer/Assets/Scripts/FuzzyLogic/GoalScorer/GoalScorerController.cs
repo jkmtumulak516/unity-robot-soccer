@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using Assets.Scripts.FuzzyLogic.GoalScorer.FuzzySets;
 using Assets.Scripts.FuzzyLogic.GoalScorer.FuzzySets.XDistances;
 using Assets.Scripts.FuzzyLogic.GoalScorer.FuzzySets.YDistances;
@@ -12,13 +10,6 @@ public class GoalScorerController : MonoBehaviour
     private GoalScorer _scorer;
 
     public float Output;
-
-    public float InputX;
-    public float InputY;
-    public float GoalX;
-    public float GoalY;
-    public float BallX;
-    public float BallY;
 
     public GameObject Ball;
     ConfigurationHolder Config;
@@ -60,20 +51,11 @@ public class GoalScorerController : MonoBehaviour
         float ballX = Ball.transform.position.z;
         float ballY = Ball.transform.position.x;
         float goalX = transform.position.z;
-        float goalY = transform.position.x;
-
-        //Debug.Log(transform.position);
 
         float inputX = Math.Abs(goalX - ballX);
         float inputY = ballY;
 
-        InputX = inputX;
-        InputY = inputY;
-        BallX = ballX;
-        BallY = ballY;
-        GoalX = goalX;
-        GoalY = goalY;
-
+        // output whether the ball scored or not
         Output = _scorer.GetConsequence(inputX, inputY);
 	}
 }

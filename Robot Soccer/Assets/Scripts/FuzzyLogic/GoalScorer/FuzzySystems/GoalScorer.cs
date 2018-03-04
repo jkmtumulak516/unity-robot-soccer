@@ -7,7 +7,6 @@ using FuzzyLogicSystems.Core.Generic.Fuzzifier;
 using FuzzyLogicSystems.Core.Generic.RuleBase;
 using FuzzyLogicSystems.Core.Rules;
 using FuzzyLogicSystems.Core.Values;
-using UnityEngine;
 
 namespace Assets.Scripts.FuzzyLogic.GoalScorer.FuzzySystems
 {
@@ -81,13 +80,6 @@ namespace Assets.Scripts.FuzzyLogic.GoalScorer.FuzzySystems
             IList<FuzzyValue<IResultFuzzyMember>> resultMembers;
             
             float output = FuzzyLogicSystem.Evaluate(input, out fuzzified, out resultMembers);
-
-            foreach (var list in fuzzified.Values)
-            {
-                foreach (var val in list)
-                    Debug.Log(val.ToString() + " => " + val.Degree);
-                
-            }
 
             return output;
         }

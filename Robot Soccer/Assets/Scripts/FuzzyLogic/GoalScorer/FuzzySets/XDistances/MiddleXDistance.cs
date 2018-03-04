@@ -1,6 +1,6 @@
-﻿using FuzzyLogicSystems.Core.Values;
+﻿using System.Collections.Generic;
+using FuzzyLogicSystems.Core.Values;
 using FuzzyLogicSystems.Core.Values.Generic;
-using System.Collections.Generic;
 
 namespace Assets.Scripts.FuzzyLogic.GoalScorer.FuzzySets.XDistances
 {
@@ -13,9 +13,9 @@ namespace Assets.Scripts.FuzzyLogic.GoalScorer.FuzzySets.XDistances
         {
             var members = new HashSet<IInputFuzzyMember>();
 
-            _inside = new LinearInput("Inside", this, 0f, true, false, 3f, 0f);
-            _close = new LinearInput("Close", this, 3f, false, false, 3f, 0f);
-            _far = new LinearInput("Far", this, 6f, false, true, 3f, 0f);
+            _inside = new LinearInput("Inside", this, 7.5f, true, false, 7.5f, 0f);
+            _close = new LinearInput("Close", this, 15f, false, false, 7.5f, 0f);
+            _far = new LinearInput("Far", this, 22.5f, false, true, 7.5f, 0f);
 
             members.Add(_close);
             members.Add(_inside);
