@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assets.Scripts.FuzzyLogic.RobotMovement.FuzzySets
+namespace Assets.Scripts.FuzzyLogic.Arbiter.FuzzySets
 {
     class Priority  : FuzzySet<IResultFuzzyMember>
     {
