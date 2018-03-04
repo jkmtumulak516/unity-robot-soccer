@@ -37,7 +37,7 @@ public class SimulationManager : MonoBehaviour {
 
     public void Initialize()
     {
-        //RedTeam.GetComponent<TeamController>().Initialize(TEAM.RED, ConfigurationHolder.c.NumberOfRobots);
+        RedTeam.GetComponent<TeamController>().Initialize(TEAM.RED, ConfigurationHolder.c.NumberOfRobots);
         BlueTeam.GetComponent<TeamController>().Initialize(TEAM.BLUE, ConfigurationHolder.c.NumberOfRobots);
     }
 
@@ -47,7 +47,9 @@ public class SimulationManager : MonoBehaviour {
         PlayButton.interactable = false;
         PauseButton.interactable = true;
         StopButton.interactable = true;
-        
+
+        BlueTeam.GetComponent<TeamController>().Ball.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+
         if (IsPaused) {
             IsPaused = false;
         }
@@ -86,5 +88,8 @@ public class SimulationManager : MonoBehaviour {
 
         RedTeam.GetComponent<TeamController>().Initialize(TEAM.RED, ConfigurationHolder.c.NumberOfRobots);
         BlueTeam.GetComponent<TeamController>().Initialize(TEAM.BLUE, ConfigurationHolder.c.NumberOfRobots);
+
+        RedTeam.GetComponent<TeamController>().Ball.transform.position = new Vector3(0f, 2.7f, 0f);
+        RedTeam.GetComponent<TeamController>().Ball.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 }

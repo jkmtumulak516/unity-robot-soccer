@@ -1906,7 +1906,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1829625074}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74fa5b8a62a378442b516f2f94fb4eb2, type: 3}
   m_Name: 
@@ -1914,7 +1914,7 @@ MonoBehaviour:
   Goal: {fileID: 1865718978}
   OpponentGoal: {fileID: 1581830945}
   Ball: {fileID: 1854074514}
-  team: 0
+  team: 1
   Defenders: []
   Midfielders: []
   Forward: []
@@ -1987,6 +1987,16 @@ Prefab:
         type: 2}
       propertyPath: m_Mass
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 54424612450386146, guid: ec3e8f3ed27e2244caaedaf589590a03,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 54424612450386146, guid: ec3e8f3ed27e2244caaedaf589590a03,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 0.12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ec3e8f3ed27e2244caaedaf589590a03, type: 2}

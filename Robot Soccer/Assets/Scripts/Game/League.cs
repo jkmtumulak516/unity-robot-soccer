@@ -16,11 +16,14 @@ namespace Assets.Scripts.Game
                 public static Vector3 DefenderPosition = new Vector3(0, 3, 48.7f);
                 public static Vector3 ForwardPosition = new Vector3(0, 3, 14.04f);
 
+                public static Vector3 DefenderKickOffPosition = new Vector3(-3, 3, -7f);
+                public static Vector3 ForwardKickOffPosition = new Vector3(5, 3, 1f);
+
                 public static Vector3 Scale = new Vector3(130f, 0.9f, 150f);
                 public static int CenterCirleRadius = 20;
             }
-            
-            
+
+
         }
 
         public class Middle
@@ -30,10 +33,17 @@ namespace Assets.Scripts.Game
                 public static Vector3 GoaliePosition = new Vector3(0, 3, 95f);
                 public static Vector3 DefenderPosition = new Vector3(0, 3, 70f);
                 public static Vector3 ForwardPosition = new Vector3(0, 3, 20f);
+                
+
+                public static Vector3[] ForwardKickOffPosition = {
+                 new Vector3(-3, 3, -7f),
+                 new Vector3(5, 3, 1f),
+                };
+
                 public static Vector3[] MidfielderPosition = {
                  new Vector3(40, 2, 50f),
                  new Vector3(-40, 2, 50f),
-                };
+                };  
 
                 public static Vector3 Scale = new Vector3(180f, 0.9f, 220f);
                 public static int CenterCirleRadius = 25;
@@ -42,7 +52,7 @@ namespace Assets.Scripts.Game
                 public static Vector3 LeftCameraPosition = new Vector3(-487.4268f, -185.4746f, 73f);
                 public static Vector3 RightCameraPosition = new Vector3(-487.4268f, -185.4746f, -215.4f);
             }
-            
+
         }
 
         public class Large
@@ -68,6 +78,9 @@ namespace Assets.Scripts.Game
                 new Vector3(-75, 3, 85f),
             };
 
+                public static Vector3 DefenderKickOffPosition = new Vector3(-3, 3, -7f);
+                public static Vector3 ForwardKickOffPosition = new Vector3(5, 3, 1f);
+
                 public static Vector3 Scale = new Vector3(280f, 0.9f, 400f);
                 public static int CenterCirleRadius = 70;
 
@@ -76,6 +89,6 @@ namespace Assets.Scripts.Game
                 public static Vector3 RightCameraPosition = new Vector3(-487.4268f, -166.8f, -333.9f);
             }
         }
-            
+
     }
 }

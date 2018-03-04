@@ -49,13 +49,19 @@ public class TeamController : MonoBehaviour {
                 Goalie = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Small.Init.GoaliePosition.x, League.Small.Init.GoaliePosition.y, League.Small.Init.GoaliePosition.z * m), q);
                 Goalie.GetComponent<RobotCarController>().Initialize(this);
                 Goalie.transform.SetParent(this.gameObject.transform);
-
-                var rc = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Small.Init.DefenderPosition.x, League.Small.Init.DefenderPosition.y, League.Small.Init.DefenderPosition.z * m), q);
+                GameObject rc = null;
+                if(team == TEAM.RED)
+                    rc = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Small.Init.DefenderPosition.x, League.Small.Init.DefenderPosition.y, League.Small.Init.DefenderPosition.z * m), q);
+                else
+                    rc = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), League.Small.Init.DefenderKickOffPosition, q);
                 rc.GetComponent<RobotCarController>().Initialize(this);
                 rc.transform.SetParent(this.gameObject.transform);
                 Defenders.Add(rc);
 
-                rc = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Small.Init.ForwardPosition.x, League.Small.Init.ForwardPosition.y, League.Small.Init.ForwardPosition.z * m), q);
+                if (team == TEAM.RED)
+                    rc = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Small.Init.ForwardPosition.x, League.Small.Init.ForwardPosition.y, League.Small.Init.ForwardPosition.z * m), q);
+                else
+                    rc = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), League.Small.Init.ForwardKickOffPosition, Quaternion.Euler(0, -90, 0));
                 rc.GetComponent<RobotCarController>().Initialize(this);
                 rc.transform.SetParent(this.gameObject.transform);
                 Forward.Add(rc);
