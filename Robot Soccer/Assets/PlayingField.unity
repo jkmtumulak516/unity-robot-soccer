@@ -1900,12 +1900,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Output: 0
-  InputX: 0
-  InputY: 0
-  GoalX: 0
-  GoalY: 0
-  BallX: 0
-  BallY: 0
   Ball: {fileID: 1854074514}
 --- !u!1 &1811610549 stripped
 GameObject:
@@ -1924,12 +1918,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Output: 0
-  InputX: 0
-  InputY: 0
-  GoalX: 0
-  GoalY: 0
-  BallX: 0
-  BallY: 0
   Ball: {fileID: 0}
 --- !u!1 &1829625074
 GameObject:
