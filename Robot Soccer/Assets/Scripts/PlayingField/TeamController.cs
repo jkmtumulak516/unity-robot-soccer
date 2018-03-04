@@ -46,67 +46,67 @@ public class TeamController : MonoBehaviour {
         switch (noOfRobots)
         {
             case 3:
-                Goalie = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Small.GoaliePosition.x, League.Small.GoaliePosition.y, League.Small.GoaliePosition.z * m), q);
+                Goalie = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Small.Init.GoaliePosition.x, League.Small.Init.GoaliePosition.y, League.Small.Init.GoaliePosition.z * m), q);
                 Goalie.GetComponent<RobotCarController>().Initialize(this);
                 Goalie.transform.SetParent(this.gameObject.transform);
 
-                var rc = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Small.DefenderPosition.x, League.Small.DefenderPosition.y, League.Small.DefenderPosition.z * m), q);
+                var rc = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Small.Init.DefenderPosition.x, League.Small.Init.DefenderPosition.y, League.Small.Init.DefenderPosition.z * m), q);
                 rc.GetComponent<RobotCarController>().Initialize(this);
                 rc.transform.SetParent(this.gameObject.transform);
                 Defenders.Add(rc);
 
-                rc = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Small.ForwardPosition.x, League.Small.ForwardPosition.y, League.Small.ForwardPosition.z * m), q);
+                rc = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Small.Init.ForwardPosition.x, League.Small.Init.ForwardPosition.y, League.Small.Init.ForwardPosition.z * m), q);
                 rc.GetComponent<RobotCarController>().Initialize(this);
                 rc.transform.SetParent(this.gameObject.transform);
                 Forward.Add(rc);
                 break;
             case 5:
-                Goalie = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Middle.GoaliePosition.x, League.Middle.GoaliePosition.y, League.Middle.GoaliePosition.z * m), q);
+                Goalie = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Middle.Init.GoaliePosition.x, League.Middle.Init.GoaliePosition.y, League.Middle.Init.GoaliePosition.z * m), q);
                 Goalie.GetComponent<RobotCarController>().Initialize(this);
                 Goalie.transform.SetParent(this.gameObject.transform);
 
-                var rd = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Middle.DefenderPosition.x, League.Middle.DefenderPosition.y, League.Middle.DefenderPosition.z * m), q);
+                var rd = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Middle.Init.DefenderPosition.x, League.Middle.Init.DefenderPosition.y, League.Middle.Init.DefenderPosition.z * m), q);
                 rd.GetComponent<RobotCarController>().Initialize(this);
                 rd.transform.SetParent(this.gameObject.transform);
                 Defenders.Add(rd);
 
-                rd = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Middle.ForwardPosition.x, League.Middle.ForwardPosition.y, League.Middle.ForwardPosition.z * m), q);
+                rd = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Middle.Init.ForwardPosition.x, League.Middle.Init.ForwardPosition.y, League.Middle.Init.ForwardPosition.z * m), q);
                 rd.GetComponent<RobotCarController>().Initialize(this);
                 rd.transform.SetParent(this.gameObject.transform);
                 Forward.Add(rd);
 
-                for(int i=0; i < League.Middle.MidfielderPosition.Length; i++)
+                for(int i=0; i < League.Middle.Init.MidfielderPosition.Length; i++)
                 {
-                    rd = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Middle.MidfielderPosition[i].x, League.Middle.MidfielderPosition[i].y, League.Middle.MidfielderPosition[i].z * m), q);
+                    rd = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Middle.Init.MidfielderPosition[i].x, League.Middle.Init.MidfielderPosition[i].y, League.Middle.Init.MidfielderPosition[i].z * m), q);
                     rd.GetComponent<RobotCarController>().Initialize(this);
                     rd.transform.SetParent(this.gameObject.transform);
                     Midfielders.Add(rd);
                 }
                 break;
             case 11:
-                Goalie = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Large.GoaliePosition.x, League.Large.GoaliePosition.y, League.Large.GoaliePosition.z * m), q);
+                Goalie = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Large.Init.GoaliePosition.x, League.Large.Init.GoaliePosition.y, League.Large.Init.GoaliePosition.z * m), q);
                 Goalie.GetComponent<RobotCarController>().Initialize(this);
                 Goalie.transform.SetParent(this.gameObject.transform);
                 
-                for (int i = 0; i < League.Large.MidfielderPosition.Length; i++)
+                for (int i = 0; i < League.Large.Init.MidfielderPosition.Length; i++)
                 {
-                    var mid = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Large.MidfielderPosition[i].x, League.Large.MidfielderPosition[i].y, League.Large.MidfielderPosition[i].z * m), q);
+                    var mid = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Large.Init.MidfielderPosition[i].x, League.Large.Init.MidfielderPosition[i].y, League.Large.Init.MidfielderPosition[i].z * m), q);
                     mid.GetComponent<RobotCarController>().Initialize(this);
                     mid.transform.SetParent(this.gameObject.transform);
                     Midfielders.Add(mid);
                 }
 
-                for (int i = 0; i < League.Large.DefenderPosition.Length; i++)
+                for (int i = 0; i < League.Large.Init.DefenderPosition.Length; i++)
                 {
-                    var def = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Large.DefenderPosition[i].x, League.Large.DefenderPosition[i].y, League.Large.DefenderPosition[i].z * m), q);
+                    var def = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Large.Init.DefenderPosition[i].x, League.Large.Init.DefenderPosition[i].y, League.Large.Init.DefenderPosition[i].z * m), q);
                     def.GetComponent<RobotCarController>().Initialize(this);
                     def.transform.SetParent(this.gameObject.transform);
                     Defenders.Add(def);
                 }
 
-                for (int i = 0; i < League.Large.ForwardPosition.Length; i++)
+                for (int i = 0; i < League.Large.Init.ForwardPosition.Length; i++)
                 {
-                    var forw = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Large.ForwardPosition[i].x, League.Large.ForwardPosition[i].y, League.Large.ForwardPosition[i].z * m), q);
+                    var forw = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Large.Init.ForwardPosition[i].x, League.Large.Init.ForwardPosition[i].y, League.Large.Init.ForwardPosition[i].z * m), q);
                     forw.GetComponent<RobotCarController>().Initialize(this);
                     forw.transform.SetParent(this.gameObject.transform);
                     Forward.Add(forw);
