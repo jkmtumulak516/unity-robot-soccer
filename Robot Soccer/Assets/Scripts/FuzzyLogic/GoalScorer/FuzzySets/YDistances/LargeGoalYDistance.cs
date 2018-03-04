@@ -4,9 +4,9 @@ using FuzzyLogicSystems.Core.Values.Generic;
 
 namespace Assets.Scripts.FuzzyLogic.GoalScorer.FuzzySets.YDistances
 {
-    public class LargeYDistance : GoalYDistance
+    public class LargeGoalYDistance : GoalYDistance
     {
-        public LargeYDistance(int category) : base(category) { }
+        public LargeGoalYDistance(int category) : base(category) { }
 
         protected override ICollection<IInputFuzzyMember> InitializeMembers()
         {

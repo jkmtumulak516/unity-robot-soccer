@@ -25,20 +25,20 @@ public class GoalScorerController : MonoBehaviour
         switch (Config.c.NumberOfRobots)
         {
             case 3:
-                xDistance = new SmallXDistance(1);
-                yDistance = new SmallYDistance(2);
+                xDistance = new SmallGoalXDistance(1);
+                yDistance = new SmallGoalYDistance(2);
                 break;
             case 5:
-                xDistance = new MiddleXDistance(1);
-                yDistance = new MiddleYDistance(2);
+                xDistance = new MiddleGoalXDistance(1);
+                yDistance = new MiddleGoalYDistance(2);
                 break;
             case 11:
-                xDistance = new LargeXDistance(1);
-                yDistance = new LargeYDistance(2);
+                xDistance = new LargeGoalXDistance(1);
+                yDistance = new LargeGoalYDistance(2);
                 break;
             default:
-                xDistance = new SmallXDistance(1);
-                yDistance = new SmallYDistance(2);
+                xDistance = new SmallGoalXDistance(1);
+                yDistance = new SmallGoalYDistance(2);
                 break;
         }
         

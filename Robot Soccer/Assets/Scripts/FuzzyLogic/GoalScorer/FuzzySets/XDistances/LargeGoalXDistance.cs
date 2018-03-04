@@ -4,17 +4,18 @@ using FuzzyLogicSystems.Core.Values.Generic;
 
 namespace Assets.Scripts.FuzzyLogic.GoalScorer.FuzzySets.XDistances
 {
-    public class SmallXDistance : GoalXDistance
+    public class LargeGoalXDistance : GoalXDistance
     {
-        public SmallXDistance(int category) : base(category) { }
+        public LargeGoalXDistance(int category) : base(category) { }
 
+        // TODO: redo the values here
         protected override ICollection<IInputFuzzyMember> InitializeMembers()
         {
             var members = new HashSet<IInputFuzzyMember>();
 
-            _inside = new LinearInput("Inside", this, 5f, true, false, 5f, 0f);
-            _close = new LinearInput("Close", this, 10f, false, false, 5f, 0f);
-            _far = new LinearInput("Far", this, 15f, false, true, 5f, 0f);
+            _inside = new LinearInput("Inside", this, 8f, true, false, 8f, 0f);
+            _close = new LinearInput("Close", this, 16f, false, false, 8f, 0f);
+            _far = new LinearInput("Far", this, 24f, false, true, 8f, 0f);
 
             members.Add(_close);
             members.Add(_inside);
