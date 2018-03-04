@@ -18,16 +18,16 @@ public class StageInitialization : MonoBehaviour {
         switch (ConfigurationHolder.c.NumberOfRobots)
         {
             case 3:
-                Floor.transform.localScale = League.Small.Scale;
-                CenterCircle.GetComponent<CircleScript>().radius = League.Small.CenterCirleRadius;
+                Floor.transform.localScale = League.Small.Init.Scale;
+                CenterCircle.GetComponent<CircleScript>().radius = League.Small.Init.CenterCirleRadius;
                 break;
             case 5:
-                Floor.transform.localScale = League.Middle.Scale;
-                CenterCircle.GetComponent<CircleScript>().radius = League.Middle.CenterCirleRadius;
+                Floor.transform.localScale = League.Middle.Init.Scale;
+                CenterCircle.GetComponent<CircleScript>().radius = League.Middle.Init.CenterCirleRadius;
                 break;
             case 11:
-                Floor.transform.localScale = League.Large.Scale;
-                CenterCircle.GetComponent<CircleScript>().radius = League.Large.CenterCirleRadius;
+                Floor.transform.localScale = League.Large.Init.Scale;
+                CenterCircle.GetComponent<CircleScript>().radius = League.Large.Init.CenterCirleRadius;
                 break;
         }
 

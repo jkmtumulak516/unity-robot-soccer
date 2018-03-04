@@ -16,6 +16,7 @@ public class SimulationManager : MonoBehaviour {
     public bool IsStart = false;
     public bool IsPaused = false;
 
+    public float TimeScale = 1f;
 
     ConfigurationHolder ConfigurationHolder;
 
@@ -47,10 +48,13 @@ public class SimulationManager : MonoBehaviour {
         PauseButton.interactable = true;
         StopButton.interactable = true;
 
+        BlueTeam.GetComponent<TeamController>().Ball.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+
         if (IsPaused) {
             IsPaused = false;
-            Time.timeScale = 1f;
         }
+
+        Time.timeScale = TimeScale;
         IsStart = true;
     }
 
@@ -84,5 +88,8 @@ public class SimulationManager : MonoBehaviour {
 
         RedTeam.GetComponent<TeamController>().Initialize(TEAM.RED, ConfigurationHolder.c.NumberOfRobots);
         BlueTeam.GetComponent<TeamController>().Initialize(TEAM.BLUE, ConfigurationHolder.c.NumberOfRobots);
+
+        RedTeam.GetComponent<TeamController>().Ball.transform.position = new Vector3(0f, 2.7f, 0f);
+        RedTeam.GetComponent<TeamController>().Ball.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 }

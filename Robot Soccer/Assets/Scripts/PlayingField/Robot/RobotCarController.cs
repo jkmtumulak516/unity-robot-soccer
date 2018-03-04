@@ -34,7 +34,7 @@ public class RobotCarController : MonoBehaviour {
         Team = team;
 
         if(Team.team == TEAM.RED)
-            this.transform.GetChild(1).gameObject.GetComponent<Renderer>().material = Resources.Load<Material>("Material/RedTeamMaterial");
+            this.transform.GetChild(0).gameObject.GetComponent<Renderer>().material = Resources.Load<Material>("Material/RedTeamMaterial");
 
         
     }
