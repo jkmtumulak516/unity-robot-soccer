@@ -55,6 +55,22 @@ namespace Assets.Scripts.FuzzyLogic.GoalieMovement.FuzzySystems
         private IFuzzyRuleBase RuleBase { get { return _rule_base; } }
         private IFuzzyLogicSystem FuzzyLogicSystem { get { return _fls; } }
 
+        public float GetOutput(float ballY, float goalieY)
+        {
+            var input = new Dictionary<int, float>()
+            {
+                { BallDistance.Category, ballY },
+                { GoalieDistance.Category, goalieY }
+            };
+
+            IDictionary<int, IList<FuzzyValue<IInputFuzzyMember>>> fuzzified;
+            IList<FuzzyValue<IResultFuzzyMember>> resultMembers;
+
+            float output = FuzzyLogicSystem.Evaluate(input, out fuzzified, out resultMembers);
+
+            return output;
+        }
+
         private List<ParentRule> CreateRules1()
         {
             var rules = new List<ParentRule>(BallDistance.Members.Count * GoalieDistance.Members.Count);
