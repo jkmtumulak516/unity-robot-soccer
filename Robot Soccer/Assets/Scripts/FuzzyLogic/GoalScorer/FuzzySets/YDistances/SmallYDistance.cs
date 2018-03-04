@@ -12,11 +12,11 @@ namespace Assets.Scripts.FuzzyLogic.GoalScorer.FuzzySets.YDistances
         {
             var members = new HashSet<IInputFuzzyMember>();
 
-            _lower = new LinearInput("Lower", this, -15f, true, false, 5f, 0f);
+            _lower = new LinearInput("Lower", this, -15f, true, false, 7.5f, 0f);
             _near_lower = new LinearInput("Near Lower", this, -7.5f, false, false, 7.5f, 0f);
             _center = new LinearInput("Center", this, 0f, false, false, 10f, 0f);
             _near_upper = new LinearInput("Near Upper", this, 7.5f, false, false, 7.5f, 0f);
-            _upper = new LinearInput("Upper", this, 15f, false, true, 5f, 0f);
+            _upper = new LinearInput("Upper", this, 15f, false, true, 7.5f, 0f);
 
             members.Add(_lower);
             members.Add(_near_lower);
