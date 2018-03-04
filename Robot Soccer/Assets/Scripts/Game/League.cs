@@ -23,7 +23,7 @@ namespace Assets.Scripts.Game
                 public static int CenterCirleRadius = 20;
             }
 
-
+            public static float GoalHeight = 40;
         }
 
         public class Middle
@@ -52,6 +52,8 @@ namespace Assets.Scripts.Game
                 public static Vector3 LeftCameraPosition = new Vector3(-487.4268f, -185.4746f, 73f);
                 public static Vector3 RightCameraPosition = new Vector3(-487.4268f, -185.4746f, -215.4f);
             }
+
+            public static float GoalHeight = 55;
 
         }
 
@@ -88,6 +90,8 @@ namespace Assets.Scripts.Game
                 public static Vector3 LeftCameraPosition = new Vector3(-487.4268f, -166.8f, 191.3f);
                 public static Vector3 RightCameraPosition = new Vector3(-487.4268f, -166.8f, -333.9f);
             }
+
+            public static float GoalHeight = 80;
         }
 
     }
