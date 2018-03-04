@@ -25,8 +25,8 @@ public class TeamController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-       
 
+        
     }
 
     public void Initialize(TEAM teamColor, int noOfRobots )

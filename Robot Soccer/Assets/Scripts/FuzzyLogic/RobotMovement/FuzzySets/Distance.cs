@@ -21,8 +21,6 @@ namespace Assets.Scripts.FuzzyLogic.RobotMovement.FuzzySets
         private IInputFuzzyMember _far;
         private IInputFuzzyMember _very_far;
 
-
-
         protected override ICollection<IInputFuzzyMember> InitializeMembers()
         {
             List<IInputFuzzyMember> collection = new List<IInputFuzzyMember>();
@@ -47,7 +45,6 @@ namespace Assets.Scripts.FuzzyLogic.RobotMovement.FuzzySets
             collection.Add(_very_far);
 
             return collection;
-
         }
 
         public IInputFuzzyMember VeryNear { get { return _very_near; } }
