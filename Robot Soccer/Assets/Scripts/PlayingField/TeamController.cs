@@ -18,6 +18,8 @@ public class TeamController : MonoBehaviour {
     public List<GameObject> Midfielders;
     public List<GameObject> Forward;
     public GameObject Goalie;
+
+    public ArbiterController ArbiterController;
     
 	// Use this for initialization
 	void Start () {
@@ -127,7 +129,14 @@ public class TeamController : MonoBehaviour {
     
     public void UpdateStrategy(STRATEGY strategy, RobotCarController nearestRobot)
     {
-
+        if(strategy == STRATEGY.OFFENSE)
+        {
+            ArbiterController.ArbiterRobot = nearestRobot;
+            //Set rest position except arbiter
+        }else
+        {
+            //Defense stuff
+        }
     }
     
     public RobotCarController GetClosestFromBall()

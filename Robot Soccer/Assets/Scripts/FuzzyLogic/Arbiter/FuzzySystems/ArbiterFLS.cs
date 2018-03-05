@@ -13,7 +13,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.FuzzyLogic.Arbiter.FuzzySystems
 {
-    class ArbiterFLS
+    public class ArbiterFLS
     {
         private readonly BallXLocation BallX;
         private readonly BallYLocation BallY;
