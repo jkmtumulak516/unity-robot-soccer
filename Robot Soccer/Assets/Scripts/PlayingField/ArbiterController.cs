@@ -110,15 +110,15 @@ public class ArbiterController : MonoBehaviour {
     }
 
 
-    private void OnDrawGizmos()
-    {
-        //if (isShootHit)
-        //{
-        //    Gizmos.color = Color.yellow;
-        //    Gizmos.DrawSphere(SphereLoc, 15f);
-        //}
+    //private void OnDrawGizmos()
+    //{
+    //    //if (isShootHit)
+    //    //{
+    //    //    Gizmos.color = Color.yellow;
+    //    //    Gizmos.DrawSphere(SphereLoc, 15f);
+    //    //}
 
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(this.ArbiterRobot.transform.forward * 75f, 75f);
-    }
+    //    Gizmos.color = Color.yellow;
+    //    Gizmos.DrawWireSphere(this.ArbiterRobot.transform.forward * 75f, 75f);
+    //}
 }

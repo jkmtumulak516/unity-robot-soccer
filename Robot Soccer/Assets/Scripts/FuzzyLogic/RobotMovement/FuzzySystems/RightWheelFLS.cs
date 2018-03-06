@@ -55,9 +55,9 @@ public class RightWheelFLS
         listOfRules.Add(builder.Var(angle.SlightlyRight).And().Var(distance.VeryFar).Build(torque.FastForward));
 
         //Front
-        listOfRules.Add(builder.Var(angle.Front).And().Var(distance.VeryNear).Build(torque.Stop));
-        listOfRules.Add(builder.Var(angle.Front).And().Var(distance.Near).Build(torque.Forward));
-        listOfRules.Add(builder.Var(angle.Front).And().Var(distance.Medium).Build(torque.Forward));
+        listOfRules.Add(builder.Var(angle.Front).And().Var(distance.VeryNear).Build(torque.Forward));
+        listOfRules.Add(builder.Var(angle.Front).And().Var(distance.Near).Build(torque.FastForward));
+        listOfRules.Add(builder.Var(angle.Front).And().Var(distance.Medium).Build(torque.FastForward));
         listOfRules.Add(builder.Var(angle.Front).And().Var(distance.Far).Build(torque.FastForward));
         listOfRules.Add(builder.Var(angle.Front).And().Var(distance.VeryFar).Build(torque.FastForward));
 
