@@ -3,13 +3,11 @@ using FuzzyLogicSystems.Core.Values.Generic;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.FuzzyLogic.RobotMovement.FuzzySets
+namespace Assets.Scripts.FuzzyLogic.RobotMovement.FuzzySets.Goalie
 {
-    class Distance : FuzzySet<IInputFuzzyMember>
+    class GoalieDistance : FuzzySet<IInputFuzzyMember>
     {
-        public Distance(int category) : base(category)
-        {
-        }
+        public GoalieDistance(int category) : base(category) { }
 
         private IInputFuzzyMember _very_near;
         private IInputFuzzyMember _near;
@@ -21,7 +19,7 @@ namespace Assets.Scripts.FuzzyLogic.RobotMovement.FuzzySets
         {
             List<IInputFuzzyMember> collection = new List<IInputFuzzyMember>();
             var gm = GameObject.Find("ConfigurationHolder").GetComponent<ConfigurationHolder>();
-            var increment = gm.c.FieldWidth / 4;
+            var increment = (gm.c.FieldHeight * 0.535714f) / 4f;
             var peak = 0f;
             var halfWidth = increment / 2;
 

@@ -1,22 +1,23 @@
-﻿using Assets.Scripts.Helper;
+﻿using Assets.Scripts.FuzzyLogic.RobotMovement.FuzzySystems;
+using Assets.Scripts.Helper;
 using UnityEngine;
 
 namespace Assets.Scripts.PlayingField.Robot.Driver
 {
-    public class Driver : IDriver
+    public class GoalieDriver : IDriver
     {
-        RightWheelFLS RightFls;
-        LeftWheelFLS LeftFls;
+        GoalieRightWheelFLS RightFls;
+        GoalieLeftWheelFLS LeftFls;
         RobotCarController Robot;
 
         private float _left;
         private float _right;
 
-        public Driver(RobotCarController robot)
+        public GoalieDriver(RobotCarController robot)
         {
             Robot = robot;
-            RightFls = new RightWheelFLS();
-            LeftFls = new LeftWheelFLS();
+            RightFls = new GoalieRightWheelFLS();
+            LeftFls = new GoalieLeftWheelFLS();
         }
 
         public void Process(float destX, float destY)

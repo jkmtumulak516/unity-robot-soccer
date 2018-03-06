@@ -5,6 +5,7 @@ using Assets.Scripts.FuzzyLogic.GoalieMovement.FuzzySets.YDistances.Input;
 using Assets.Scripts.FuzzyLogic.GoalieMovement.FuzzySets.YDistances.Output;
 using Assets.Scripts.FuzzyLogic.GoalieMovement.FuzzySystems;
 using UnityEngine;
+using Assets.Scripts.PlayingField.Robot.Driver;
 
 public class GoalieController : MonoBehaviour
 {
@@ -29,8 +30,12 @@ public class GoalieController : MonoBehaviour
     
     void Start ()
     {
+        _robot_controller = GetComponent<RobotCarController>();
+        _robot_controller.Driver = new GoalieDriver(_robot_controller);
+        _robot_controller.transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+        Ball = GameObject.Find("Soccer Ball");
+        Goal = (_robot_controller.Team.team == TeamController.TEAM.RED) ? GameObject.Find("LeftRing") : GameObject.Find("RightRing");
         Config = GameObject.Find("ConfigurationHolder").GetComponent<ConfigurationHolder>();
-
         GoalieOutputYDistance yOutput = null;
         var category = new GoalieCategory(6);
 
@@ -58,7 +63,10 @@ public class GoalieController : MonoBehaviour
         _strategy_3 = new GoalieStrategy(3, _ball_y_distance, _goalie_y_distance, yOutput);
         _strategy_4 = new GoalieStrategy(4, _ball_y_distance, _goalie_y_distance, yOutput);
 
-        _robot_controller = GetComponent<RobotCarController>();
+        float goalX = Goal.transform.position.z;
+        float goalOffset = 15f;
+
+        FixedX = goalX < 0 ? goalX + goalOffset : goalX - goalOffset;
     }
 	
 	void FixedUpdate () {
@@ -85,7 +93,7 @@ public class GoalieController : MonoBehaviour
             default: throw new Exception("Invalid Strategy!");
         }
 
-        _robot_controller.DestX = FixedX;
-        _robot_controller.DestY = yOutput;
+        _robot_controller.DestX = yOutput;
+        _robot_controller.DestY = FixedX;
     }
 }

@@ -48,6 +48,7 @@ public class TeamController : MonoBehaviour {
             case 3:
                 Goalie = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Small.GoaliePosition.x, League.Small.GoaliePosition.y, League.Small.GoaliePosition.z * m), q);
                 Goalie.GetComponent<RobotCarController>().Initialize(this);
+                Goalie.AddComponent<GoalieController>();
                 Goalie.transform.SetParent(this.gameObject.transform);
 
                 var rc = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Small.DefenderPosition.x, League.Small.DefenderPosition.y, League.Small.DefenderPosition.z * m), q);

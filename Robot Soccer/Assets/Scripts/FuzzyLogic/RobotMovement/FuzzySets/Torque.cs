@@ -1,10 +1,6 @@
 ﻿using FuzzyLogicSystems.Core.Values;
 using FuzzyLogicSystems.Core.Values.Generic;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assets.Scripts.FuzzyLogic.RobotMovement.FuzzySets
 {
