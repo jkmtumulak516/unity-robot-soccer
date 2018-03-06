@@ -24,7 +24,6 @@ public class TeamController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         
-        Goalie = null;
 	}
 	
 	// Update is called once per frame
@@ -129,7 +128,8 @@ public class TeamController : MonoBehaviour {
     
     public void UpdateStrategy(STRATEGY strategy, RobotCarController nearestRobot)
     {
-        if(strategy == STRATEGY.OFFENSE)
+        Strategy = strategy;
+        if(Strategy == STRATEGY.OFFENSE)
         {
             ArbiterController.ArbiterRobot = nearestRobot;
             //Set rest position except arbiter

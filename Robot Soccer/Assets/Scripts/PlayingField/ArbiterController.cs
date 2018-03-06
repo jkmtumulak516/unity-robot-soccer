@@ -8,23 +8,21 @@ public class ArbiterController : MonoBehaviour {
     private ArbiterFLS ArbiterFls;
     public RobotCarController ArbiterRobot;
     public GameObject Ball;
-
-    public float RobotBallRadius = 10;
-    int BallLayer;
+    public Collider[] hits;
+    public float RobotBallRadius = 7;
 	// Use this for initialization
 	void Start () {
         this.ArbiterFls = new ArbiterFLS();
-        BallLayer = LayerMask.GetMask("Ball");
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
         if(ArbiterRobot != null)
         {
-            
-            if (Physics.OverlapSphere(this.transform.position, RobotBallRadius, 1 << BallLayer).Length == 1)
+            hits = Physics.OverlapSphere(ArbiterRobot.transform.position, RobotBallRadius, 1 << 10);
+            if (hits    .Length == 1)
             {
-
+                Debug.Log(GetShootStatus());
             }else
             {
                 //Move towards ball
@@ -38,5 +36,22 @@ public class ArbiterController : MonoBehaviour {
     {
 
         return 0f;
+    }
+
+    float GetShootStatus()
+    {
+        RaycastHit hitInfo;
+        float degree = 30f;
+        if (Physics.SphereCast(ArbiterRobot.transform.position, 15f, ArbiterRobot.Team.OpponentGoal.transform.position, out hitInfo))
+        {
+            degree = Vector3.Distance(SphereCastCenterOnCollision(ArbiterRobot.transform.position, ArbiterRobot.Team.OpponentGoal.transform.position, hitInfo.distance),
+                hitInfo.collider.gameObject.transform.position);
+        }
+        return degree;
+    }
+
+    private static Vector3 SphereCastCenterOnCollision(Vector3 origin, Vector3 directionCast, float hitInfoDistance)
+    {
+        return origin + (directionCast.normalized * hitInfoDistance);
     }
 }
