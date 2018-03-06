@@ -5,9 +5,7 @@ using FuzzyLogicSystems.Core.Generic.Fuzzifier;
 using FuzzyLogicSystems.Core.Generic.RuleBase;
 using FuzzyLogicSystems.Core.Rules;
 using FuzzyLogicSystems.Core.Values;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class RightWheelFLS
 {

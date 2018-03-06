@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.PlayingField.Robot.Driver;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static TeamController;
@@ -15,7 +16,7 @@ public class RobotCarController : MonoBehaviour {
 
     public TeamController Team;
 
-    public Driver Driver;
+    public IDriver Driver;
 
     public float DestX = 0;
     public float DestY = 0;

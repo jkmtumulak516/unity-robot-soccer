@@ -47,9 +47,7 @@ public class SimulationManager : MonoBehaviour {
         PlayButton.interactable = false;
         PauseButton.interactable = true;
         StopButton.interactable = true;
-
         BlueTeam.GetComponent<TeamController>().Ball.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-
         if (IsPaused) {
             IsPaused = false;
         }
