@@ -34,7 +34,7 @@ public class GoalieController : MonoBehaviour
         _robot_controller.Driver = new GoalieDriver(_robot_controller);
         _robot_controller.transform.rotation = Quaternion.Euler(0f, 90f, 0f);
         Ball = GameObject.Find("Soccer Ball");
-        Goal = (_robot_controller.Team.team == TeamController.TEAM.RED) ? GameObject.Find("LeftRing") : GameObject.Find("RightRing");
+        Goal = (_robot_controller.Team.Team == TeamController.TEAM.RED) ? GameObject.Find("LeftRing") : GameObject.Find("RightRing");
         Config = GameObject.Find("ConfigurationHolder").GetComponent<ConfigurationHolder>();
         GoalieOutputYDistance yOutput = null;
         var category = new GoalieCategory(6);
