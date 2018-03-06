@@ -34,10 +34,12 @@ public class RobotCarController : MonoBehaviour {
     {
         Team = team;
 
-        if(Team.team == TEAM.RED)
+        if(Team.Team == TEAM.RED)
             this.transform.GetChild(0).gameObject.GetComponent<Renderer>().material = Resources.Load<Material>("Material/RedTeamMaterial");
 
-        
+        this.transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer((Team.Team == TEAM.RED) ? "Red Team" : "Blue Team");
+
+
     }
 	
 	// Update is called once per frame

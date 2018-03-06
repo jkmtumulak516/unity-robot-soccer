@@ -50,35 +50,35 @@ namespace Assets.Scripts.FuzzyLogic.GameState.FuzzySystems
             listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.LeadingWidely). And().  Var(distanceGoal.ModeratelyNear). Build(stateValue.MoreOffense));
             listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.LeadingWidely). And().  Var(distanceGoal.Medium).         Build(stateValue.LightOffense));
             listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.LeadingWidely). And().  Var(distanceGoal.ModeratelyFar).  Build(stateValue.LightOffense));
-            listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.LeadingWidely). And().  Var(distanceGoal.VeryNear).       Build(stateValue.DefenseOffense));
+            listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.LeadingWidely). And().  Var(distanceGoal.VeryFar).       Build(stateValue.DefenseOffense));
 
             // -----------------------------LEADING SLIGHTLY --------------------------------------------
             listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.LeadingSlightly). And().  Var(distanceGoal.VeryNear).       Build(stateValue.MoreOffense));
             listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.LeadingSlightly). And().  Var(distanceGoal.ModeratelyNear). Build(stateValue.MoreOffense));
             listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.LeadingSlightly). And().  Var(distanceGoal.Medium).         Build(stateValue.LightOffense));
             listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.LeadingSlightly). And().  Var(distanceGoal.ModeratelyFar).  Build(stateValue.LightOffense));
-            listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.LeadingSlightly). And().  Var(distanceGoal.VeryNear).       Build(stateValue.DefenseOffense));
+            listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.LeadingSlightly). And().  Var(distanceGoal.VeryFar).       Build(stateValue.DefenseOffense));
 
              // -----------------------------SAME --------------------------------------------
             listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.Same). And().  Var(distanceGoal.VeryNear).       Build(stateValue.MoreOffense));
             listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.Same). And().  Var(distanceGoal.ModeratelyNear). Build(stateValue.LightOffense));
             listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.Same). And().  Var(distanceGoal.Medium).         Build(stateValue.DefenseOffense));
             listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.Same). And().  Var(distanceGoal.ModeratelyFar).  Build(stateValue.LightDefense));
-            listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.Same). And().  Var(distanceGoal.VeryNear).       Build(stateValue.MoreDefense));
+            listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.Same). And().  Var(distanceGoal.VeryFar).       Build(stateValue.MoreDefense));
 
              // -----------------------------LAGGING SLIGHTLY --------------------------------------------
             listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.LaggingSlightly). And().  Var(distanceGoal.VeryNear).       Build(stateValue.LightOffense));
             listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.LaggingSlightly). And().  Var(distanceGoal.ModeratelyNear). Build(stateValue.LightDefense));
             listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.LaggingSlightly). And().  Var(distanceGoal.Medium).         Build(stateValue.LightDefense));
             listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.LaggingSlightly). And().  Var(distanceGoal.ModeratelyFar).  Build(stateValue.MoreDefense));
-            listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.LaggingSlightly). And().  Var(distanceGoal.VeryNear).       Build(stateValue.MoreDefense));
+            listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.LaggingSlightly). And().  Var(distanceGoal.VeryFar).       Build(stateValue.MoreDefense));
 
             // -----------------------------LAGGING WIDELY --------------------------------------------
             listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.LaggingWidely). And().  Var(distanceGoal.VeryNear).       Build(stateValue.MoreDefense));
             listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.LaggingWidely). And().  Var(distanceGoal.ModeratelyNear). Build(stateValue.MoreDefense));
             listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.LaggingWidely). And().  Var(distanceGoal.Medium).         Build(stateValue.LightDefense));
             listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.LaggingWidely). And().  Var(distanceGoal.ModeratelyFar).  Build(stateValue.MoreDefense));
-            listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.LaggingWidely). And().  Var(distanceGoal.VeryNear).       Build(stateValue.MoreDefense));
+            listOfRules.Add(builder.  Var(orientation.VeryGood). And().  Var(distanceDifference.LaggingWidely). And().  Var(distanceGoal.VeryFar).       Build(stateValue.MoreDefense));
 
 
 
@@ -89,35 +89,35 @@ namespace Assets.Scripts.FuzzyLogic.GameState.FuzzySystems
             listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LeadingWidely). And().  Var(distanceGoal.ModeratelyNear). Build(stateValue.MoreOffense));
             listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LeadingWidely). And().  Var(distanceGoal.Medium).         Build(stateValue.LightOffense));
             listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LeadingWidely). And().  Var(distanceGoal.ModeratelyFar).  Build(stateValue.LightOffense));
-            listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LeadingWidely). And().  Var(distanceGoal.VeryNear).       Build(stateValue.DefenseOffense));
+            listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LeadingWidely). And().  Var(distanceGoal.VeryFar).       Build(stateValue.DefenseOffense));
 
             // -----------------------------LEADING SLIGHTLY --------------------------------------------
             listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LeadingSlightly). And().  Var(distanceGoal.VeryNear).       Build(stateValue.MoreOffense));
             listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LeadingSlightly). And().  Var(distanceGoal.ModeratelyNear). Build(stateValue.MoreOffense));
             listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LeadingSlightly). And().  Var(distanceGoal.Medium).         Build(stateValue.LightOffense));
             listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LeadingSlightly). And().  Var(distanceGoal.ModeratelyFar).  Build(stateValue.LightOffense));
-            listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LeadingSlightly). And().  Var(distanceGoal.VeryNear).       Build(stateValue.DefenseOffense));
+            listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LeadingSlightly). And().  Var(distanceGoal.VeryFar).       Build(stateValue.DefenseOffense));
 
              // -----------------------------SAME --------------------------------------------
             listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.Same). And().  Var(distanceGoal.VeryNear).       Build(stateValue.MoreOffense));
             listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.Same). And().  Var(distanceGoal.ModeratelyNear). Build(stateValue.LightOffense));
             listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.Same). And().  Var(distanceGoal.Medium).         Build(stateValue.DefenseOffense));
             listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.Same). And().  Var(distanceGoal.ModeratelyFar).  Build(stateValue.LightDefense));
-            listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.Same). And().  Var(distanceGoal.VeryNear).       Build(stateValue.MoreDefense));
+            listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.Same). And().  Var(distanceGoal.VeryFar).       Build(stateValue.MoreDefense));
 
              // -----------------------------LAGGING SLIGHTLY --------------------------------------------
             listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LaggingSlightly). And().  Var(distanceGoal.VeryNear).       Build(stateValue.LightOffense));
             listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LaggingSlightly). And().  Var(distanceGoal.ModeratelyNear). Build(stateValue.LightDefense));
             listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LaggingSlightly). And().  Var(distanceGoal.Medium).         Build(stateValue.LightDefense));
             listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LaggingSlightly). And().  Var(distanceGoal.ModeratelyFar).  Build(stateValue.MoreDefense));
-            listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LaggingSlightly). And().  Var(distanceGoal.VeryNear).       Build(stateValue.MoreDefense));
+            listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LaggingSlightly). And().  Var(distanceGoal.VeryFar).       Build(stateValue.MoreDefense));
 
             // -----------------------------LAGGING WIDELY --------------------------------------------
             listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LaggingWidely). And().  Var(distanceGoal.VeryNear).       Build(stateValue.MoreDefense));
             listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LaggingWidely). And().  Var(distanceGoal.ModeratelyNear). Build(stateValue.MoreDefense));
             listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LaggingWidely). And().  Var(distanceGoal.Medium).         Build(stateValue.LightDefense));
             listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LaggingWidely). And().  Var(distanceGoal.ModeratelyFar).  Build(stateValue.MoreDefense));
-            listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LaggingWidely). And().  Var(distanceGoal.VeryNear).       Build(stateValue.MoreDefense));
+            listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LaggingWidely). And().  Var(distanceGoal.VeryFar).       Build(stateValue.MoreDefense));
 
 
 
@@ -128,35 +128,35 @@ namespace Assets.Scripts.FuzzyLogic.GameState.FuzzySystems
             listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.LeadingWidely). And().  Var(distanceGoal.ModeratelyNear). Build(stateValue.LightOffense));
             listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.LeadingWidely). And().  Var(distanceGoal.Medium).         Build(stateValue.LightOffense));
             listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.LeadingWidely). And().  Var(distanceGoal.ModeratelyFar).  Build(stateValue.LightOffense));
-            listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.LeadingWidely). And().  Var(distanceGoal.VeryNear).       Build(stateValue.DefenseOffense));
+            listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.LeadingWidely). And().  Var(distanceGoal.VeryFar).       Build(stateValue.DefenseOffense));
 
             // -----------------------------LEADING SLIGHTLY --------------------------------------------
             listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.LeadingSlightly). And().  Var(distanceGoal.VeryNear).       Build(stateValue.MoreOffense));
             listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.LeadingSlightly). And().  Var(distanceGoal.ModeratelyNear). Build(stateValue.LightOffense));
             listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.LeadingSlightly). And().  Var(distanceGoal.Medium).         Build(stateValue.LightOffense));
             listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.LeadingSlightly). And().  Var(distanceGoal.ModeratelyFar).  Build(stateValue.DefenseOffense));
-            listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.LeadingSlightly). And().  Var(distanceGoal.VeryNear).       Build(stateValue.DefenseOffense));
+            listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.LeadingSlightly). And().  Var(distanceGoal.VeryFar).       Build(stateValue.DefenseOffense));
 
              // -----------------------------SAME --------------------------------------------
             listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.Same). And().  Var(distanceGoal.VeryNear).       Build(stateValue.LightOffense));
             listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.Same). And().  Var(distanceGoal.ModeratelyNear). Build(stateValue.LightOffense));
             listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.Same). And().  Var(distanceGoal.Medium).         Build(stateValue.DefenseOffense));
             listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.Same). And().  Var(distanceGoal.ModeratelyFar).  Build(stateValue.LightDefense));
-            listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.Same). And().  Var(distanceGoal.VeryNear).       Build(stateValue.MoreDefense));
+            listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.Same). And().  Var(distanceGoal.VeryFar).       Build(stateValue.MoreDefense));
 
              // -----------------------------LAGGING SLIGHTLY --------------------------------------------
             listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.LaggingSlightly). And().  Var(distanceGoal.VeryNear).       Build(stateValue.LightOffense));
             listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.LaggingSlightly). And().  Var(distanceGoal.ModeratelyNear). Build(stateValue.DefenseOffense));
             listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.LaggingSlightly). And().  Var(distanceGoal.Medium).         Build(stateValue.LightDefense));
             listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.LaggingSlightly). And().  Var(distanceGoal.ModeratelyFar).  Build(stateValue.MoreDefense));
-            listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.LaggingSlightly). And().  Var(distanceGoal.VeryNear).       Build(stateValue.MoreDefense));
+            listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.LaggingSlightly). And().  Var(distanceGoal.VeryFar).       Build(stateValue.MoreDefense));
 
             // -----------------------------LAGGING WIDELY --------------------------------------------
             listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.LaggingWidely). And().  Var(distanceGoal.VeryNear).       Build(stateValue.LightDefense));
             listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.LaggingWidely). And().  Var(distanceGoal.ModeratelyNear). Build(stateValue.LightDefense));
             listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.LaggingWidely). And().  Var(distanceGoal.Medium).         Build(stateValue.LightDefense));
             listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.LaggingWidely). And().  Var(distanceGoal.ModeratelyFar).  Build(stateValue.MoreDefense));
-            listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.LaggingWidely). And().  Var(distanceGoal.VeryNear).       Build(stateValue.MoreDefense));
+            listOfRules.Add(builder.  Var(orientation.Bad). And().  Var(distanceDifference.LaggingWidely). And().  Var(distanceGoal.VeryFar).       Build(stateValue.MoreDefense));
 
 
             return listOfRules;
@@ -166,13 +166,19 @@ namespace Assets.Scripts.FuzzyLogic.GameState.FuzzySystems
         {
             IDictionary<int, IList<FuzzyValue<IInputFuzzyMember>>> fuzzified;
             IList<FuzzyValue<IResultFuzzyMember>> evaluated;
-
-            var result = fls.Evaluate(new Dictionary<int, float>
+            float result = 0;
+            try { 
+                result = fls.Evaluate(new Dictionary<int, float>
+                {
+                    {this.orientation.Category, orientation},
+                    {this.distanceDifference.Category, distanceDifference },
+                    {this.distanceGoal.Category, distanceGoal}
+                }, out fuzzified, out evaluated);
+                
+            } catch(Exception e)
             {
-                {this.orientation.Category, orientation},
-                {this.distanceDifference.Category, distanceDifference },
-                {this.distanceGoal.Category, distanceGoal}
-            }, out fuzzified, out evaluated);
+
+            }
 
             return result;
         }

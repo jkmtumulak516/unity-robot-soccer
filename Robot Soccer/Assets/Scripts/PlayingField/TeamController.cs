@@ -6,21 +6,24 @@ using UnityEngine;
 public class TeamController : MonoBehaviour {
 
     public enum TEAM : int { BLUE, RED };
+    public enum STRATEGY : int { OFFENSE, DEFENSE};
     public GameObject Goal;
     public GameObject OpponentGoal;
 
     public GameObject Ball;
 
-    public TEAM team;
+    public TEAM Team;
+    public STRATEGY Strategy;
     public List<GameObject> Defenders;
     public List<GameObject> Midfielders;
     public List<GameObject> Forward;
     public GameObject Goalie;
+
+    public ArbiterController ArbiterController;
     
 	// Use this for initialization
 	void Start () {
         
-        Goalie = null;
 	}
 	
 	// Update is called once per frame
@@ -34,10 +37,10 @@ public class TeamController : MonoBehaviour {
         Defenders = new List<GameObject>();
         Midfielders = new List<GameObject>();
         Forward = new List<GameObject>();
-        team = teamColor;
+        Team = teamColor;
         Quaternion q = Quaternion.identity;
         int m = -1;
-        if (team == TEAM.RED)
+        if (Team == TEAM.RED)
         {
             m = 1;
             q = Quaternion.Euler(0, 180, 0);
@@ -51,7 +54,7 @@ public class TeamController : MonoBehaviour {
                 Goalie.AddComponent<GoalieController>();
                 Goalie.transform.SetParent(this.gameObject.transform);
                 GameObject rc = null;
-                if(team == TEAM.RED)
+                if(Team == TEAM.RED)
                     rc = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Small.Init.DefenderPosition.x, League.Small.Init.DefenderPosition.y, League.Small.Init.DefenderPosition.z * m), q);
                 else
                     rc = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), League.Small.Init.DefenderKickOffPosition, q);
@@ -59,7 +62,7 @@ public class TeamController : MonoBehaviour {
                 rc.transform.SetParent(this.gameObject.transform);
                 Defenders.Add(rc);
 
-                if (team == TEAM.RED)
+                if (Team == TEAM.RED)
                     rc = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Small.Init.ForwardPosition.x, League.Small.Init.ForwardPosition.y, League.Small.Init.ForwardPosition.z * m), q);
                 else
                     rc = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), League.Small.Init.ForwardKickOffPosition, Quaternion.Euler(0, -90, 0));
@@ -125,18 +128,19 @@ public class TeamController : MonoBehaviour {
         }
     }
 
-    //TODO Implement UpdateStrategy (Defense)
-    public void UpdateStrategy()
+    
+    public void UpdateStrategy(STRATEGY strategy, RobotCarController nearestRobot)
     {
-
+        Strategy = strategy;
+        if(Strategy == STRATEGY.OFFENSE)
+        {
+            ArbiterController.ArbiterRobot = nearestRobot;
+            //Set rest position except arbiter
+        }else
+        {
+            //Defense stuff
+        }
     }
-
-    //TODO Implement UpdateStrategy (Offense with arbiter)
-    public void UpdateStrategy(RobotCarController arbiterRobot)
-    {
-
-    }
-
     
     public RobotCarController GetClosestFromBall()
     {

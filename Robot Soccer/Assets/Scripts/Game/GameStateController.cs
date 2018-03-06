@@ -22,12 +22,14 @@ public class GameStateController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        //NearestBlue = BlueTeam.GetClosestFromBall();
-        //NearestRed = RedTeam.GetClosestFromBall();
+        NearestBlue = BlueTeam.GetClosestFromBall();
+        NearestRed = RedTeam.GetClosestFromBall();
 
-        //var blueState = GetStateBlue();
-        //var redState = GetStateRed();
+        var blueState = GetStateBlue();
+        var redState = GetStateRed();
 
+        RedTeam.UpdateStrategy((redState > blueState) ? TeamController.STRATEGY.OFFENSE : TeamController.STRATEGY.DEFENSE, NearestRed);
+        BlueTeam.UpdateStrategy((blueState > redState) ? TeamController.STRATEGY.OFFENSE : TeamController.STRATEGY.DEFENSE, NearestBlue);
         //Debug.Log("Blue : " + blueState + " ||||   Red : " + redState);
     }
     
