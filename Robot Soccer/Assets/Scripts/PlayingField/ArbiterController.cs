@@ -1,4 +1,6 @@
 ﻿using Assets.Scripts.FuzzyLogic.Arbiter.FuzzySystems;
+using Assets.Scripts.Helper;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +12,9 @@ public class ArbiterController : MonoBehaviour {
     public GameObject Ball;
     public Collider[] hits;
     public float RobotBallRadius = 7;
+    public LayerMask SphereCastLayerMask;
+    Vector3 SphereLoc;
+    
 	// Use this for initialization
 	void Start () {
         this.ArbiterFls = new ArbiterFLS();
@@ -20,7 +25,7 @@ public class ArbiterController : MonoBehaviour {
         if(ArbiterRobot != null)
         {
             hits = Physics.OverlapSphere(ArbiterRobot.transform.position, RobotBallRadius, 1 << 10);
-            if (hits    .Length == 1)
+            if (hits.Length == 1)
             {
                 Debug.Log(GetShootStatus());
             }else
@@ -41,11 +46,14 @@ public class ArbiterController : MonoBehaviour {
     float GetShootStatus()
     {
         RaycastHit hitInfo;
-        float degree = 30f;
-        if (Physics.SphereCast(ArbiterRobot.transform.position, 15f, ArbiterRobot.Team.OpponentGoal.transform.position, out hitInfo))
+        float degree = 25f;
+        if (Physics.SphereCast(ArbiterRobot.transform.position, 15f, ArbiterRobot.Team.OpponentGoal.transform.position - ArbiterRobot.transform.position, out hitInfo, Mathf.Infinity, SphereCastLayerMask))
         {
-            degree = Vector3.Distance(SphereCastCenterOnCollision(ArbiterRobot.transform.position, ArbiterRobot.Team.OpponentGoal.transform.position, hitInfo.distance),
-                hitInfo.collider.gameObject.transform.position);
+
+            SphereLoc = SphereCastCenterOnCollision(ArbiterRobot.transform.position, ArbiterRobot.Team.OpponentGoal.transform.position - ArbiterRobot.transform.position, hitInfo.distance);
+            
+            degree = ComputeDistance(hitInfo.collider.gameObject.transform.position, ArbiterRobot.transform.position, ArbiterRobot.Team.OpponentGoal.transform.position);
+           
         }
         return degree;
     }
@@ -54,4 +62,23 @@ public class ArbiterController : MonoBehaviour {
     {
         return origin + (directionCast.normalized * hitInfoDistance);
     }
+    
+    float ComputeDistance(Vector3 A, Vector3 B, Vector3 C)
+    {
+        Vector3 D = (C - B) / Vector3.Distance(C, B);
+        Vector3 V = A - B;
+        float t = Vector3.Dot(V, D);
+        Vector3 P = B + t * D;
+        return Vector3.Distance(P, A);
+    }
+
+
+    //private void OnDrawGizmos()
+    //{
+    //    //if (isShootHit)
+    //    //{
+    //    //    Gizmos.color = Color.yellow;
+    //    //    Gizmos.DrawSphere(SphereLoc, 15f);
+    //    //}
+    //}
 }

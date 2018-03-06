@@ -16,7 +16,7 @@ public class SimulationManager : MonoBehaviour {
     public bool IsStart = false;
     public bool IsPaused = false;
 
-    public float TimeScale = 1f;
+    public float TimeScale;
 
     ConfigurationHolder ConfigurationHolder;
 
@@ -28,6 +28,7 @@ public class SimulationManager : MonoBehaviour {
         PlayButton.onClick.AddListener(delegate { StartSimulation(); });
         PauseButton.onClick.AddListener(delegate { PauseSimulation(); });
         StopButton.onClick.AddListener(delegate { StopSimulation(); });
+        TimeScale = 4f;
 	}
 	
 	// Update is called once per frame

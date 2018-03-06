@@ -89,7 +89,8 @@ namespace Assets.Scripts.FuzzyLogic.GameState.FuzzySystems
             listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LeadingWidely). And().  Var(distanceGoal.ModeratelyNear). Build(stateValue.MoreOffense));
             listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LeadingWidely). And().  Var(distanceGoal.Medium).         Build(stateValue.LightOffense));
             listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LeadingWidely). And().  Var(distanceGoal.ModeratelyFar).  Build(stateValue.LightOffense));
-            listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LeadingWidely). And().  Var(distanceGoal.VeryFar
+            listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LeadingWidely). And().  Var(distanceGoal.VeryFar).       Build(stateValue.DefenseOffense));
+
             // -----------------------------LEADING SLIGHTLY --------------------------------------------
             listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LeadingSlightly). And().  Var(distanceGoal.VeryNear).       Build(stateValue.MoreOffense));
             listOfRules.Add(builder.  Var(orientation.Good). And().  Var(distanceDifference.LeadingSlightly). And().  Var(distanceGoal.ModeratelyNear). Build(stateValue.MoreOffense));

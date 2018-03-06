@@ -1644,7 +1644,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ArbiterRobot: {fileID: 0}
   Ball: {fileID: 1854074514}
+  hits: []
   RobotBallRadius: 10
+  SphereCastLayerMask:
+    serializedVersion: 2
+    m_Bits: 768
 --- !u!4 &1319640173
 Transform:
   m_ObjectHideFlags: 0

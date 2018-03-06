@@ -26,8 +26,8 @@ namespace Assets.Scripts.FuzzyLogic.Arbiter.FuzzySets
         {
             List<IInputFuzzyMember> collection = new List<IInputFuzzyMember>();
 
-            var increment = 4;
-            var peak = 0;
+            var increment = 10f;
+            var peak = 5f;
             var halfWidth = increment;
 
             _blocked = new LinearInput("Blocked", this, peak, true, false, increment, 0);
