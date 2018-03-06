@@ -9,6 +9,7 @@ public class ArbiterController : MonoBehaviour {
 
     ArbiterFLS ArbiterFls;
     public enum ACTION : int { DRIBBLE, PASS, SHOOT}
+    public ACTION Action;
     public RobotCarController ArbiterRobot;
     public GameObject Ball;
     public Collider[] hits;
@@ -43,6 +44,23 @@ public class ArbiterController : MonoBehaviour {
                 Debug.Log("BallX: " + ballX);
                 Debug.Log("BallY: " + ballY);
                 Debug.Log("Result: " + priority);
+
+                if(priority > 68)
+                {
+                    Action = ACTION.SHOOT;
+
+
+                } else if (priority > 34)
+                {
+                    Action = ACTION.PASS;
+                }
+                else
+                {
+                    Action = ACTION.DRIBBLE;
+                    ArbiterRobot.DestX = ArbiterRobot.Team.OpponentGoal.transform.position.x;
+                    ArbiterRobot.DestY = ArbiterRobot.Team.OpponentGoal.transform.position.z;
+
+                }
                 
             }
             else

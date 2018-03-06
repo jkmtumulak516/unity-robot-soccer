@@ -36,7 +36,7 @@ namespace Assets.Scripts.FuzzyLogic.Arbiter.FuzzySets
             _moderately_high = new LinearResult("Moderately High", this, 75, 25, 0);
             collection.Add(_low);
 
-            _high = new LinearResult("High", this, 75, 25, 0);
+            _high = new LinearResult("High", this, 100, 25, 0);
             collection.Add(_high);
             
 
