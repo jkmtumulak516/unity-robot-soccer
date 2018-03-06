@@ -59,7 +59,7 @@ namespace Assets.Scripts.FuzzyLogic.Arbiter.FuzzySets
             _high = new LinearInput("High", this, peak += increment, false, true, increment, 0);
             collection.Add(_high);
 
-            return null;
+            return collection;
 
         }
 

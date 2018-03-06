@@ -29,7 +29,7 @@ namespace Assets.Scripts.FuzzyLogic.Arbiter.FuzzySets
 
             var gm = GameObject.Find("ConfigurationHolder").GetComponent<ConfigurationHolder>();
             var increment = gm.c.FieldWidth / 4;
-            var peak = 0f;
+            var peak = -(gm.c.FieldWidth / 2);
             var halfWidth = increment;
 
             _very_near = new LinearInput("Very Near", this, peak, true, false, increment, 0);
