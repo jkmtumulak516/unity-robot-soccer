@@ -39,6 +39,8 @@ public class GoalieController : MonoBehaviour
         GoalieOutputYDistance yOutput = null;
         var category = new GoalieCategory(6);
 
+        float goalOffset;
+
         switch (Config.c.NumberOfRobots)
         {
             case 3:
@@ -47,12 +49,26 @@ public class GoalieController : MonoBehaviour
                 _ball_x_distance = new SmallGoalieXDistance(3);
                 _ball_y_distance = new SmallGoalieInputYDistance(4);
                 yOutput = new SmallGoalieOutputYDistance(5);
+                goalOffset = 15f;
                 break;
             case 5:
-                throw new NotImplementedException("Middle League FuzzySets not implemented.");
+                _goalie_x_distance = new MiddleGoalieXDistance(1);
+                _goalie_y_distance = new MiddleGoalieInputYDistance(2);
+                _ball_x_distance = new MiddleGoalieXDistance(3);
+                _ball_y_distance = new MiddleGoalieInputYDistance(4);
+                yOutput = new MiddleGoalieOutputYDistance(5);
+                goalOffset = 20f;
+                break;
             case 11:
-                throw new NotImplementedException("Large League FuzzySets not implemented.");
+                _goalie_x_distance = new LargeGoalieXDistance(1);
+                _goalie_y_distance = new LargeGoalieInputYDistance(2);
+                _ball_x_distance = new LargeGoalieXDistance(3);
+                _ball_y_distance = new LargeGoalieInputYDistance(4);
+                yOutput = new LargeGoalieOutputYDistance(5);
+                goalOffset = 25f;
+                break;
             default:
+                goalOffset = 15f;
                 break;
         }
 
@@ -64,7 +80,6 @@ public class GoalieController : MonoBehaviour
         _strategy_4 = new GoalieStrategy(4, _ball_y_distance, _goalie_y_distance, yOutput);
 
         float goalX = Goal.transform.position.z;
-        float goalOffset = 15f;
 
         FixedX = goalX < 0 ? goalX + goalOffset : goalX - goalOffset;
     }

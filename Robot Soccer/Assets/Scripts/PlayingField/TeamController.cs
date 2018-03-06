@@ -64,6 +64,7 @@ public class TeamController : MonoBehaviour {
             case 5:
                 Goalie = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Middle.GoaliePosition.x, League.Middle.GoaliePosition.y, League.Middle.GoaliePosition.z * m), q);
                 Goalie.GetComponent<RobotCarController>().Initialize(this);
+                Goalie.AddComponent<GoalieController>();
                 Goalie.transform.SetParent(this.gameObject.transform);
 
                 var rd = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Middle.DefenderPosition.x, League.Middle.DefenderPosition.y, League.Middle.DefenderPosition.z * m), q);
@@ -87,6 +88,7 @@ public class TeamController : MonoBehaviour {
             case 11:
                 Goalie = (GameObject)Object.Instantiate(Resources.Load("RobotCar"), new Vector3(League.Large.GoaliePosition.x, League.Large.GoaliePosition.y, League.Large.GoaliePosition.z * m), q);
                 Goalie.GetComponent<RobotCarController>().Initialize(this);
+                Goalie.AddComponent<GoalieController>();
                 Goalie.transform.SetParent(this.gameObject.transform);
                 
                 for (int i = 0; i < League.Large.MidfielderPosition.Length; i++)

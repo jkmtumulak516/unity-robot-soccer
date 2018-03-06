@@ -46,7 +46,6 @@ public class SimulationManager : MonoBehaviour {
         PlayButton.interactable = false;
         PauseButton.interactable = true;
         StopButton.interactable = true;
-
         if (IsPaused) {
             IsPaused = false;
             Time.timeScale = 1f;
