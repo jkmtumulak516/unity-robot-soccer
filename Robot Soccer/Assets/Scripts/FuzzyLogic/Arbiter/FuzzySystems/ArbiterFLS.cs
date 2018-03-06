@@ -218,34 +218,34 @@ namespace Assets.Scripts.FuzzyLogic.Arbiter.FuzzySystems
                 // +++++++++++++++++++++++++ PASS VERY CLEAR +++++++++++++++++++++++++++++++++
                 { 
                     //X VERY NEAR
-                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.VeryClear).And().    Var(BallX.VeryNear).And().  Var(BallY.ExtremelyLow).    Build(Priority.Medium));
-                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.VeryClear).And().    Var(BallX.VeryNear).And().  Var(BallY.NearLow).         Build(Priority.Medium));
-                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.VeryClear).And().    Var(BallX.VeryNear).And().  Var(BallY.NearHigh).        Build(Priority.Medium));
-                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.VeryClear).And().    Var(BallX.VeryNear).And().  Var(BallY.High).            Build(Priority.Medium));
+                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.VeryClear).And().    Var(BallX.VeryNear).And().  Var(BallY.ExtremelyLow).    Build(Priority.Medium));
+                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.VeryClear).And().    Var(BallX.VeryNear).And().  Var(BallY.NearLow).         Build(Priority.Medium));
+                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.VeryClear).And().    Var(BallX.VeryNear).And().  Var(BallY.NearHigh).        Build(Priority.Medium));
+                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.VeryClear).And().    Var(BallX.VeryNear).And().  Var(BallY.High).            Build(Priority.Medium));
                                                          
                     //X MODERATELY NEAR                  
-                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.VeryClear).And().    Var(BallX.ModeratelyNear).And().  Var(BallY.ExtremelyLow).    Build(Priority.Medium));
-                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.VeryClear).And().    Var(BallX.ModeratelyNear).And().  Var(BallY.NearLow).         Build(Priority.ModeratelyHigh));
-                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.VeryClear).And().    Var(BallX.ModeratelyNear).And().  Var(BallY.NearHigh).        Build(Priority.ModeratelyHigh));
-                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.VeryClear).And().    Var(BallX.ModeratelyNear).And().  Var(BallY.High).            Build(Priority.Medium));
+                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.VeryClear).And().    Var(BallX.ModeratelyNear).And().  Var(BallY.ExtremelyLow).    Build(Priority.Medium));
+                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.VeryClear).And().    Var(BallX.ModeratelyNear).And().  Var(BallY.NearLow).         Build(Priority.ModeratelyHigh));
+                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.VeryClear).And().    Var(BallX.ModeratelyNear).And().  Var(BallY.NearHigh).        Build(Priority.ModeratelyHigh));
+                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.VeryClear).And().    Var(BallX.ModeratelyNear).And().  Var(BallY.High).            Build(Priority.Medium));
                                                           
-                    //X NEAR                                
-                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.VeryClear).And().    Var(BallX.Near).And().  Var(BallY.ExtremelyLow).    Build(Priority.ModeratelyHigh));
-                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.VeryClear).And().    Var(BallX.Near).And().  Var(BallY.NearLow).         Build(Priority.ModeratelyHigh));
-                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.VeryClear).And().    Var(BallX.Near).And().  Var(BallY.NearHigh).        Build(Priority.ModeratelyHigh));
-                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.VeryClear).And().    Var(BallX.Near).And().  Var(BallY.High).            Build(Priority.ModeratelyHigh));
+                    //X NEAR                              
+                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.VeryClear).And().    Var(BallX.Near).And().  Var(BallY.ExtremelyLow).    Build(Priority.ModeratelyHigh));
+                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.VeryClear).And().    Var(BallX.Near).And().  Var(BallY.NearLow).         Build(Priority.ModeratelyHigh));
+                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.VeryClear).And().    Var(BallX.Near).And().  Var(BallY.NearHigh).        Build(Priority.ModeratelyHigh));
+                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.VeryClear).And().    Var(BallX.Near).And().  Var(BallY.High).            Build(Priority.ModeratelyHigh));
                                                           
                     //X FAR                               
-                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.VeryClear).And().    Var(BallX.Far).And().  Var(BallY.ExtremelyLow).    Build(Priority.ModeratelyHigh));
-                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.VeryClear).And().    Var(BallX.Far).And().  Var(BallY.NearLow).         Build(Priority.High));
-                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.VeryClear).And().    Var(BallX.Far).And().  Var(BallY.NearHigh).        Build(Priority.High));
-                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.VeryClear).And().    Var(BallX.Far).And().  Var(BallY.High).            Build(Priority.ModeratelyHigh));
+                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.VeryClear).And().    Var(BallX.Far).And().  Var(BallY.ExtremelyLow).    Build(Priority.ModeratelyHigh));
+                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.VeryClear).And().    Var(BallX.Far).And().  Var(BallY.NearLow).         Build(Priority.High));
+                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.VeryClear).And().    Var(BallX.Far).And().  Var(BallY.NearHigh).        Build(Priority.High));
+                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.VeryClear).And().    Var(BallX.Far).And().  Var(BallY.High).            Build(Priority.ModeratelyHigh));
                                                           
                     //X VERY FAR                          
-                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.VeryClear).And().    Var(BallX.VeryFar).And().  Var(BallY.ExtremelyLow).    Build(Priority.High));
-                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.VeryClear).And().    Var(BallX.VeryFar).And().  Var(BallY.NearLow).         Build(Priority.High));
-                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.VeryClear).And().    Var(BallX.VeryFar).And().  Var(BallY.NearHigh).        Build(Priority.High));
-                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.VeryClear).And().    Var(BallX.VeryFar).And().  Var(BallY.High).            Build(Priority.High));
+                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.VeryClear).And().    Var(BallX.VeryFar).And().  Var(BallY.ExtremelyLow).    Build(Priority.High));
+                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.VeryClear).And().    Var(BallX.VeryFar).And().  Var(BallY.NearLow).         Build(Priority.High));
+                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.VeryClear).And().    Var(BallX.VeryFar).And().  Var(BallY.NearHigh).        Build(Priority.High));
+                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.VeryClear).And().    Var(BallX.VeryFar).And().  Var(BallY.High).            Build(Priority.High));
                 }
                 
             }
@@ -288,34 +288,34 @@ namespace Assets.Scripts.FuzzyLogic.Arbiter.FuzzySystems
                 // +++++++++++++++++++++++++ PASS CLEAR +++++++++++++++++++++++++++++++++
                 { 
                     //X VERY NEAR
-                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.Clear).And().    Var(BallX.VeryNear).And().  Var(BallY.ExtremelyLow).    Build(Priority.ModeratelyLow));
-                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.Clear).And().    Var(BallX.VeryNear).And().  Var(BallY.NearLow).         Build(Priority.ModeratelyLow));
-                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.Clear).And().    Var(BallX.VeryNear).And().  Var(BallY.NearHigh).        Build(Priority.ModeratelyLow));
-                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.Clear).And().    Var(BallX.VeryNear).And().  Var(BallY.High).            Build(Priority.ModeratelyLow));
+                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.Clear).And().    Var(BallX.VeryNear).And().  Var(BallY.ExtremelyLow).    Build(Priority.ModeratelyLow));
+                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.Clear).And().    Var(BallX.VeryNear).And().  Var(BallY.NearLow).         Build(Priority.ModeratelyLow));
+                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.Clear).And().    Var(BallX.VeryNear).And().  Var(BallY.NearHigh).        Build(Priority.ModeratelyLow));
+                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.Clear).And().    Var(BallX.VeryNear).And().  Var(BallY.High).            Build(Priority.ModeratelyLow));
                                                           
                     //X MODERATELY NEAR                   
-                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.Clear).And().    Var(BallX.ModeratelyNear).And().  Var(BallY.ExtremelyLow).    Build(Priority.ModeratelyLow));
-                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.Clear).And().    Var(BallX.ModeratelyNear).And().  Var(BallY.NearLow).         Build(Priority.ModeratelyLow));
-                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.Clear).And().    Var(BallX.ModeratelyNear).And().  Var(BallY.NearHigh).        Build(Priority.ModeratelyLow));
-                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.Clear).And().    Var(BallX.ModeratelyNear).And().  Var(BallY.High).            Build(Priority.ModeratelyLow));
+                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.Clear).And().    Var(BallX.ModeratelyNear).And().  Var(BallY.ExtremelyLow).    Build(Priority.ModeratelyLow));
+                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.Clear).And().    Var(BallX.ModeratelyNear).And().  Var(BallY.NearLow).         Build(Priority.ModeratelyLow));
+                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.Clear).And().    Var(BallX.ModeratelyNear).And().  Var(BallY.NearHigh).        Build(Priority.ModeratelyLow));
+                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.Clear).And().    Var(BallX.ModeratelyNear).And().  Var(BallY.High).            Build(Priority.ModeratelyLow));
                                                           
                     //X NEAR                              
-                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.Clear).And().    Var(BallX.Near).And().  Var(BallY.ExtremelyLow).    Build(Priority.ModeratelyLow));
-                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.Clear).And().    Var(BallX.Near).And().  Var(BallY.NearLow).         Build(Priority.ModeratelyLow));
-                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.Clear).And().    Var(BallX.Near).And().  Var(BallY.NearHigh).        Build(Priority.ModeratelyLow));
-                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.Clear).And().    Var(BallX.Near).And().  Var(BallY.High).            Build(Priority.ModeratelyLow));
+                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.Clear).And().    Var(BallX.Near).And().  Var(BallY.ExtremelyLow).    Build(Priority.ModeratelyLow));
+                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.Clear).And().    Var(BallX.Near).And().  Var(BallY.NearLow).         Build(Priority.ModeratelyLow));
+                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.Clear).And().    Var(BallX.Near).And().  Var(BallY.NearHigh).        Build(Priority.ModeratelyLow));
+                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.Clear).And().    Var(BallX.Near).And().  Var(BallY.High).            Build(Priority.ModeratelyLow));
                                                           
                     //X FAR                               
-                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.Clear).And().    Var(BallX.Far).And().  Var(BallY.ExtremelyLow).    Build(Priority.Medium));
-                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.Clear).And().    Var(BallX.Far).And().  Var(BallY.NearLow).         Build(Priority.ModeratelyHigh));
-                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.Clear).And().    Var(BallX.Far).And().  Var(BallY.NearHigh).        Build(Priority.ModeratelyHigh));
-                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.Clear).And().    Var(BallX.Far).And().  Var(BallY.High).            Build(Priority.Medium));
+                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.Clear).And().    Var(BallX.Far).And().  Var(BallY.ExtremelyLow).    Build(Priority.Medium));
+                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.Clear).And().    Var(BallX.Far).And().  Var(BallY.NearLow).         Build(Priority.ModeratelyHigh));
+                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.Clear).And().    Var(BallX.Far).And().  Var(BallY.NearHigh).        Build(Priority.ModeratelyHigh));
+                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.Clear).And().    Var(BallX.Far).And().  Var(BallY.High).            Build(Priority.Medium));
                                                           
                     //X VERY FAR                          
-                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.Clear).And().    Var(BallX.VeryFar).And().  Var(BallY.ExtremelyLow).    Build(Priority.ModeratelyLow));
-                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.Clear).And().    Var(BallX.VeryFar).And().  Var(BallY.NearLow).         Build(Priority.ModeratelyHigh));
-                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.Clear).And().    Var(BallX.VeryFar).And().  Var(BallY.NearHigh).        Build(Priority.ModeratelyHigh));
-                    listOfRules.Add(builder.    Var(Shoot.Clear).And().   Var(Pass.Clear).And().    Var(BallX.VeryFar).And().  Var(BallY.High).            Build(Priority.ModeratelyLow));
+                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.Clear).And().    Var(BallX.VeryFar).And().  Var(BallY.ExtremelyLow).    Build(Priority.ModeratelyLow));
+                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.Clear).And().    Var(BallX.VeryFar).And().  Var(BallY.NearLow).         Build(Priority.ModeratelyHigh));
+                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.Clear).And().    Var(BallX.VeryFar).And().  Var(BallY.NearHigh).        Build(Priority.ModeratelyHigh));
+                    listOfRules.Add(builder.    Var(Shoot.VeryClear).And().   Var(Pass.Clear).And().    Var(BallX.VeryFar).And().  Var(BallY.High).            Build(Priority.ModeratelyLow));
                 }
 
                 // +++++++++++++++++++++++++ PASS VERY CLEAR +++++++++++++++++++++++++++++++++
