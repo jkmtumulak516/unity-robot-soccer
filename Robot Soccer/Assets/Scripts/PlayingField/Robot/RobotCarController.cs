@@ -31,6 +31,8 @@ public class RobotCarController : MonoBehaviour {
     public LayerMask layer;
     float DistanceKeep = 10;
 
+    public bool IsGoalie = false;
+
     SimulationManager simulationManager;
 	// Use this for initialization
 	void Start () {
@@ -55,10 +57,10 @@ public class RobotCarController : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         Time.timeScale = 4f;
-        if (simulationManager.IsStart || simulationManager == null) {
+        if (simulationManager.IsStart) {
             RaycastHit hit;
             Vector3 tar = new Vector3(DestX, transform.position.y, DestY);
-            if (HasCollision(tar, out hit))
+            if (HasCollision(tar, out hit) && !IsGoalie)
             {
                 Vector3 t1 = new Vector3();
                 Vector3 t2 = new Vector3();
@@ -135,6 +137,10 @@ public class RobotCarController : MonoBehaviour {
                 {
                     Spin = 0;
                     TimeCounter = 0;
+                    if (IsGoalie)
+                    {
+                        transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+                    }
                 }
             }
 

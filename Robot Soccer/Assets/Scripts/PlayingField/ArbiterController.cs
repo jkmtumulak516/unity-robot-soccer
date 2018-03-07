@@ -123,6 +123,7 @@ public class ArbiterController : MonoBehaviour {
         {
             foreach(var t in teamMates)
             {
+                
                 var status = GetStatus(t.transform.position);
                 if(status > degree)
                 {

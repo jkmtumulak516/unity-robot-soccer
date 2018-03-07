@@ -182,7 +182,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1186680127641082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.077547, y: 63.648647, z: 85.985695}
+  m_LocalPosition: {x: -40.76802, y: 163.8055, z: 59.400177}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4822625568307364}
@@ -444,7 +444,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1736498983033916}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 823675256779b3841b46bdcc13de2d0c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -486,7 +486,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1958526885565990}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 823675256779b3841b46bdcc13de2d0c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -530,11 +530,14 @@ MonoBehaviour:
   Team: {fileID: 0}
   Spin: 0
   SpinTime: 0.5
+  ShoveTime: 0.5
+  Shove: 0
   DestX: 0
   DestY: 0
   layer:
     serializedVersion: 2
     m_Bits: 2816
+  IsGoalie: 0
 --- !u!146 &146182141510830242
 WheelCollider:
   m_ObjectHideFlags: 1
