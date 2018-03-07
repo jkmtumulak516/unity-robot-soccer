@@ -32,19 +32,19 @@ namespace Assets.Scripts.FuzzyLogic.Arbiter.FuzzySets
             var peak = 0f;
             var halfWidth = increment;
 
-            _very_near = new LinearInput("Very Near", this, peak, true, false, increment, 0);
+            _very_near = new LinearInput("Very Near", this, peak, true, false, halfWidth, 0);
             collection.Add(_very_near);
 
-            _moderately_near = new LinearInput("Moderately Near", this, peak += increment, false, false, increment, 0);
+            _moderately_near = new LinearInput("Moderately Near", this, peak += increment, false, false, halfWidth, 0);
             collection.Add(_moderately_near);
 
-            _near = new LinearInput("Near", this, peak += increment, false, false, increment, 0);
+            _near = new LinearInput("Near", this, peak += increment, false, false, halfWidth, 0);
             collection.Add(_near);
 
-            _far = new LinearInput("Far", this, peak += increment, false, false, increment, 0);
+            _far = new LinearInput("Far", this, peak += increment, false, false, halfWidth, 0);
             collection.Add(_far);
 
-            _very_far = new LinearInput("Very Far", this, peak += increment, false, true, increment, 0);
+            _very_far = new LinearInput("Very Far", this, peak += increment, false, true, halfWidth, 0);
             collection.Add(_very_far);
 
             return collection;

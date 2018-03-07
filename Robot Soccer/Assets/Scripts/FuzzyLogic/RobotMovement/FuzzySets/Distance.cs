@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.FuzzyLogic.RobotMovement.FuzzySets
 {
-    class Distance : FuzzySet<IInputFuzzyMember>
+    public class Distance : FuzzySet<IInputFuzzyMember>
     {
         public Distance(int category) : base(category)
         {
@@ -20,8 +20,7 @@ namespace Assets.Scripts.FuzzyLogic.RobotMovement.FuzzySets
         protected override ICollection<IInputFuzzyMember> InitializeMembers()
         {
             List<IInputFuzzyMember> collection = new List<IInputFuzzyMember>();
-            var gm = GameObject.Find("ConfigurationHolder").GetComponent<ConfigurationHolder>();
-            var increment = gm.c.FieldWidth / 4;
+            var increment = (GameObject.Find("ConfigurationHolder")?.GetComponent<ConfigurationHolder>().c.FieldWidth ?? 150) / 4;
             var peak = 0f;
             var halfWidth = increment / 2;
 

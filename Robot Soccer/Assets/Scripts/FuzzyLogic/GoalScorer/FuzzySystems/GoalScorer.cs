@@ -45,23 +45,23 @@ namespace Assets.Scripts.FuzzyLogic.GoalScorer.FuzzySystems
             var rb = new RuleBuilder();
 
             // Inside
-            rules.Add(rb.Var(XDistance.Inside).And().Var(YDistance.Lower).Build(Consequence.VeryGood));
+            rules.Add(rb.Var(XDistance.Inside).And().Var(YDistance.Lower).Build(Consequence.Satisfactory));
             rules.Add(rb.Var(XDistance.Inside).And().Var(YDistance.NearLower).Build(Consequence.VeryGood));
             rules.Add(rb.Var(XDistance.Inside).And().Var(YDistance.Center).Build(Consequence.VeryGood));
             rules.Add(rb.Var(XDistance.Inside).And().Var(YDistance.NearUpper).Build(Consequence.VeryGood));
-            rules.Add(rb.Var(XDistance.Inside).And().Var(YDistance.Upper).Build(Consequence.VeryGood));
+            rules.Add(rb.Var(XDistance.Inside).And().Var(YDistance.Upper).Build(Consequence.Satisfactory));
 
             // Close
             rules.Add(rb.Var(XDistance.Close).And().Var(YDistance.Lower).Build(Consequence.NeedsImprovement));
             rules.Add(rb.Var(XDistance.Close).And().Var(YDistance.NearLower).Build(Consequence.Average));
-            rules.Add(rb.Var(XDistance.Close).And().Var(YDistance.Center).Build(Consequence.Satisfactory));
+            rules.Add(rb.Var(XDistance.Close).And().Var(YDistance.Center).Build(Consequence.Average));
             rules.Add(rb.Var(XDistance.Close).And().Var(YDistance.NearUpper).Build(Consequence.Average));
             rules.Add(rb.Var(XDistance.Close).And().Var(YDistance.Upper).Build(Consequence.NeedsImprovement));
 
             // Far
             rules.Add(rb.Var(XDistance.Far).And().Var(YDistance.Lower).Build(Consequence.Poor));
             rules.Add(rb.Var(XDistance.Far).And().Var(YDistance.NearLower).Build(Consequence.NeedsImprovement));
-            rules.Add(rb.Var(XDistance.Far).And().Var(YDistance.Center).Build(Consequence.Average));
+            rules.Add(rb.Var(XDistance.Far).And().Var(YDistance.Center).Build(Consequence.NeedsImprovement));
             rules.Add(rb.Var(XDistance.Far).And().Var(YDistance.NearUpper).Build(Consequence.NeedsImprovement));
             rules.Add(rb.Var(XDistance.Far).And().Var(YDistance.Upper).Build(Consequence.Poor));
 
