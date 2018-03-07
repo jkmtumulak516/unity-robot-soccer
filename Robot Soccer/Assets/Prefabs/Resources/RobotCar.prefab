@@ -182,7 +182,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1186680127641082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.790825, y: 46.50753, z: 2.7704585}
+  m_LocalPosition: {x: 14.310723, y: 211.87143, z: 0.8507828}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4822625568307364}
@@ -528,8 +528,13 @@ MonoBehaviour:
   rightWheel: {fileID: 1958526885565990}
   arbiterMarker: {fileID: 1129400333648844}
   Team: {fileID: 0}
+  Spin: 0
+  SpinTime: 0.5
   DestX: 0
   DestY: 0
+  layer:
+    serializedVersion: 2
+    m_Bits: 2816
 --- !u!146 &146182141510830242
 WheelCollider:
   m_ObjectHideFlags: 1

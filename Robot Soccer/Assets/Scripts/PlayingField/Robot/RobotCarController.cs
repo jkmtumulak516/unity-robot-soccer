@@ -16,10 +16,18 @@ public class RobotCarController : MonoBehaviour {
 
     public TeamController Team;
 
+    public int Spin = 0;
+    public float SpinTime = 0.5f;
+
+    float TimeCounter = 0;
+
     public IDriver Driver;
 
     public float DestX = 0;
     public float DestY = 0;
+
+    public LayerMask layer;
+    float DistanceKeep = 10;
 
     SimulationManager simulationManager;
 	// Use this for initialization
@@ -44,8 +52,65 @@ public class RobotCarController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        if (simulationManager.IsStart) { 
-            Driver.Process(DestX, DestY);
+        if (simulationManager.IsStart) {
+            RaycastHit hit;
+            Vector3 tar = new Vector3(DestX, transform.position.y, DestY);
+            if (HasCollision(tar, out hit))
+            {
+                Vector3 t1 = new Vector3();
+                Vector3 t2 = new Vector3();
+
+                var m1 = GetSlope(tar, hit.point);
+                var m2 = -(1 / m1);
+
+                //horizontal
+                if(m1 == 0)
+                {
+                    t1.z = tar.z;
+                    t2.z = tar.z;
+
+                    t1.x = tar.x + DistanceKeep;
+                    t2.x = tar.x - DistanceKeep;
+                } else if (float.IsInfinity(m1))
+                {
+                    t1.z = tar.z - DistanceKeep;
+                    t2.z = tar.z + DistanceKeep;
+
+                    t1.x = tar.x ;
+                    t2.x = tar.x ;
+                }else
+                {
+                    var A = m1;
+                    var B = -1;
+                    var C = tar.x - m1 * tar.z;
+
+                    t1.z = (((B*m2*tar.z) - (B*tar.x) + (DistanceKeep*Mathf.Sqrt(Mathf.Pow(A,2) + Mathf.Pow(B, 2))) / (B*m2 + A)));
+                    t1.x = m2 * (t1.z - tar.z) + t1.x;
+
+                    t2.z = (((B * m2 * tar.z) - (B * tar.x) + (DistanceKeep * Mathf.Sqrt(Mathf.Pow(A, 2) + Mathf.Pow(B, 2))) / (B * m2 + A)));
+                    t2.x = m2 * (t2.z - tar.z) + t1.x;
+                }
+
+                bool t1Collision = HasCollision(t1);
+                bool t2Collision = HasCollision(t2);
+
+                var t1Dist = Vector3.Distance(t1, tar);
+                var t2Dist = Vector3.Distance(t2, tar);
+
+                if (t1Collision && !t2Collision)
+                {
+                    Driver.Process(t2.x, t2.z);
+                }else if (!t1Collision && t2Collision)
+                {
+                    Driver.Process(t1.x, t1.z);
+                }
+                else
+                {
+                    var smaller = (t1Dist <= t2Dist) ? t1 : t2;
+                    Driver.Process(smaller.x, smaller.z);
+                }
+            }else
+                Driver.Process(DestX, DestY);
 
             leftMotorTorque = Driver.LeftTorque;
             rightMotorTorque = Driver.RightTorque;
@@ -57,8 +122,21 @@ public class RobotCarController : MonoBehaviour {
 			    axleInfo.rightWheel.motorTorque = rightMotor;
 		    }
 
-                //leftWheel.transform.Rotate(0,axleInfo.leftWheel.rpm / 60 * 360 * Time.deltaTime, 0);
-                //rightWheel.transform.Rotate(0,axleInfo.rightWheel.rpm / 60 * 360 * Time.deltaTime, 0);
+            if (Spin != 0)
+            {
+                float h = Mathf.Pow(10, 10) * Spin;
+                GetComponent<Rigidbody>().maxAngularVelocity = 7;
+                GetComponent<Rigidbody>().AddTorque(transform.up * h, ForceMode.Impulse);
+                TimeCounter += Time.deltaTime;
+                if (TimeCounter >= SpinTime)
+                {
+                    Spin = 0;
+                    TimeCounter = 0;
+                }
+            }
+
+            leftWheel.transform.Rotate(0, axleInfo.leftWheel.rpm / 60 * 360 * Time.deltaTime, 0);
+            rightWheel.transform.Rotate(0, axleInfo.rightWheel.rpm / 60 * 360 * Time.deltaTime, 0);
         }
 
     }
@@ -68,9 +146,29 @@ public class RobotCarController : MonoBehaviour {
         arbiterMarker.SetActive(active);
     }
 
-    
 
-	[System.Serializable]
+    bool HasCollision(Vector3 target)
+    {
+        RaycastHit hitInfo;
+        return (Physics.SphereCast(this.transform.position, 15f, target - this.transform.position, out hitInfo, 20f, layer));
+        
+    }
+
+    bool HasCollision(Vector3 target, out RaycastHit hitInfo)
+    {
+        return (Physics.SphereCast(this.transform.position, 15f, target - this.transform.position, out hitInfo, 20f, layer));
+    }
+
+    float GetSlope(Vector3 a, Vector3 b)
+    {
+        //x - z
+        //y - x
+        return (a.x - b.x) / (a.z - b.z);
+    }
+
+
+
+    [System.Serializable]
 	public class AxleInfo {
 		public WheelCollider leftWheel;
 		public WheelCollider rightWheel;
