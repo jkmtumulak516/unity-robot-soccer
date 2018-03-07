@@ -42,12 +42,57 @@ public class ArbiterController : MonoBehaviour {
                 if(priority > 68)
                 {
                     Action = ACTION.SHOOT;
+                    var ArbiterBallOrientation = Angle.ComputeRelativeAngle(ArbiterRobot.transform.eulerAngles.y, ArbiterRobot.transform.position.x, ArbiterRobot.transform.position.y, Ball.transform.position.x, Ball.transform.position.y);
+                    var ArbiterGoalOrientation = Angle.ComputeRelativeAngle(ArbiterRobot.transform.eulerAngles.y, ArbiterRobot.transform.position.x, ArbiterRobot.transform.position.y, ArbiterRobot.Team.OpponentGoal.transform.position.x, ArbiterRobot.Team.OpponentGoal.transform.position.y);
+                    //Ball is front of robot
+                    if (Math.Abs(ArbiterBallOrientation) <= 22)
+                    {
+                        
+                        
+                        if (Math.Abs(ArbiterGoalOrientation) <= 20)
+                        {
+                            ArbiterRobot.Shove = true;
+                        }
+                        else
+                        {
+                            ArbiterRobot.Spin = (ArbiterGoalOrientation < 0) ? -1 : 1;
 
+                        }
+                    }
+                    else
+                    {
+                        ArbiterRobot.Spin = (ArbiterGoalOrientation < 0) ? -1 : 1;
+                    }
 
                 } else if (priority > 34)
                 {
                     Action = ACTION.PASS;
-                    ArbiterRobot.Spin = 1;
+                    var ArbiterBallOrientation = Angle.ComputeRelativeAngle(ArbiterRobot.transform.eulerAngles.y, ArbiterRobot.transform.position.x, ArbiterRobot.transform.position.y, Ball.transform.position.x, Ball.transform.position.y);
+                    
+                    //Ball is front of robot
+                    if (Math.Abs(ArbiterBallOrientation) <= 10)
+                    {
+                        if(bestTeamMate != null)
+                        {
+                            var ArbiterTeamMateOrientation = Angle.ComputeRelativeAngle(ArbiterRobot.transform.eulerAngles.y, ArbiterRobot.transform.position.x, ArbiterRobot.transform.position.y, bestTeamMate.gameObject.transform.position.x, bestTeamMate.gameObject.transform.position.y);
+                            if(Math.Abs(ArbiterTeamMateOrientation) <= 20)
+                            {
+                                ArbiterRobot.Shove = true;
+                            }
+                            else
+                            {
+                                ArbiterRobot.Spin = (ArbiterTeamMateOrientation < 0) ? -1 : 1;
+                                
+                            }
+                        }
+                    }else
+                    {
+                        if (bestTeamMate != null)
+                        {
+                            var ArbiterTeamMateOrientation = Angle.ComputeRelativeAngle(ArbiterRobot.transform.eulerAngles.y, ArbiterRobot.transform.position.x, ArbiterRobot.transform.position.y, bestTeamMate.gameObject.transform.position.x, bestTeamMate.gameObject.transform.position.y);
+                            ArbiterRobot.Spin = (ArbiterTeamMateOrientation < 0) ? -1 : 1;
+                        }
+                    }
                 }
                 else
                 {

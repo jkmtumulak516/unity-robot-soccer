@@ -18,6 +18,8 @@ public class RobotCarController : MonoBehaviour {
 
     public int Spin = 0;
     public float SpinTime = 0.5f;
+    public float ShoveTime = 0.5f;
+    public bool Shove = false;
 
     float TimeCounter = 0;
 
@@ -98,14 +100,14 @@ public class RobotCarController : MonoBehaviour {
                 var t1Dist = Vector3.Distance(t1, tar);
                 var t2Dist = Vector3.Distance(t2, tar);
 
-                if (t1Collision && !t2Collision)
-                {
-                    Driver.Process(t2.x, t2.z);
-                }else if (!t1Collision && t2Collision)
-                {
-                    Driver.Process(t1.x, t1.z);
-                }
-                else
+                //if (t1Collision && !t2Collision)
+                //{
+                //    Driver.Process(t2.x, t2.z);
+                //}else if (!t1Collision && t2Collision)
+                //{
+                //    Driver.Process(t1.x, t1.z);
+                //}
+                //else
                 {
                     var smaller = (t1Dist <= t2Dist) ? t1 : t2;
                     Driver.Process(smaller.x, smaller.z);
@@ -132,6 +134,17 @@ public class RobotCarController : MonoBehaviour {
                 if (TimeCounter >= SpinTime)
                 {
                     Spin = 0;
+                    TimeCounter = 0;
+                }
+            }
+
+            if (Shove)
+            {
+                GetComponent<Rigidbody>().AddForce(this.transform.forward * 3500, ForceMode.Impulse);
+                TimeCounter += Time.deltaTime;
+                if (TimeCounter >= SpinTime)
+                {
+                    Shove = false;
                     TimeCounter = 0;
                 }
             }
