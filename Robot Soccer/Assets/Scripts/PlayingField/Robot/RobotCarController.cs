@@ -52,7 +52,8 @@ public class RobotCarController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        if (simulationManager.IsStart) {
+        Time.timeScale = 4f;
+        if (simulationManager.IsStart || simulationManager == null) {
             RaycastHit hit;
             Vector3 tar = new Vector3(DestX, transform.position.y, DestY);
             if (HasCollision(tar, out hit))
@@ -125,7 +126,7 @@ public class RobotCarController : MonoBehaviour {
             if (Spin != 0)
             {
                 float h = Mathf.Pow(10, 10) * Spin;
-                GetComponent<Rigidbody>().maxAngularVelocity = 7;
+                GetComponent<Rigidbody>().maxAngularVelocity = 5;
                 GetComponent<Rigidbody>().AddTorque(transform.up * h, ForceMode.Impulse);
                 TimeCounter += Time.deltaTime;
                 if (TimeCounter >= SpinTime)
@@ -135,8 +136,8 @@ public class RobotCarController : MonoBehaviour {
                 }
             }
 
-            leftWheel.transform.Rotate(0, axleInfo.leftWheel.rpm / 60 * 360 * Time.deltaTime, 0);
-            rightWheel.transform.Rotate(0, axleInfo.rightWheel.rpm / 60 * 360 * Time.deltaTime, 0);
+            //leftWheel.transform.Rotate(0, axleInfo.leftWheel.rpm / 60 * 360 * Time.deltaTime, 0);
+            //rightWheel.transform.Rotate(0, axleInfo.rightWheel.rpm / 60 * 360 * Time.deltaTime, 0);
         }
 
     }
@@ -150,13 +151,13 @@ public class RobotCarController : MonoBehaviour {
     bool HasCollision(Vector3 target)
     {
         RaycastHit hitInfo;
-        return (Physics.SphereCast(this.transform.position, 15f, target - this.transform.position, out hitInfo, 20f, layer));
+        return (Physics.SphereCast(this.transform.position, 10f, target - this.transform.position, out hitInfo, 17f, layer));
         
     }
 
     bool HasCollision(Vector3 target, out RaycastHit hitInfo)
     {
-        return (Physics.SphereCast(this.transform.position, 15f, target - this.transform.position, out hitInfo, 20f, layer));
+        return (Physics.SphereCast(this.transform.position, 10f, target - this.transform.position, out hitInfo, 17f, layer));
     }
 
     float GetSlope(Vector3 a, Vector3 b)

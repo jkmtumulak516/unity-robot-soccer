@@ -13,7 +13,7 @@ public class ArbiterController : MonoBehaviour {
     public RobotCarController ArbiterRobot;
     public GameObject Ball;
     public Collider[] hits;
-    public float RobotBallRadius = 7;
+    public float RobotBallRadius = 1;
     public LayerMask SphereCastLayerMask;
     Vector3 SphereLoc;
     
@@ -39,12 +39,6 @@ public class ArbiterController : MonoBehaviour {
                 var ballY = Ball.transform.position.x;
                 var priority = ArbiterFls.GetPriority(shoot, pass, ballX, ballY);
 
-                Debug.Log("Shoot: " + shoot);
-                Debug.Log("Pass: " + pass);
-                Debug.Log("BallX: " + ballX);
-                Debug.Log("BallY: " + ballY);
-                Debug.Log("Result: " + priority);
-
                 if(priority > 68)
                 {
                     Action = ACTION.SHOOT;
@@ -53,6 +47,7 @@ public class ArbiterController : MonoBehaviour {
                 } else if (priority > 34)
                 {
                     Action = ACTION.PASS;
+                    ArbiterRobot.Spin = 1;
                 }
                 else
                 {
@@ -65,6 +60,7 @@ public class ArbiterController : MonoBehaviour {
             }
             else
             {
+
                 //Move towards ball
                 ArbiterRobot.DestX = Ball.transform.position.x;
                 ArbiterRobot.DestY = Ball.transform.position.z;
