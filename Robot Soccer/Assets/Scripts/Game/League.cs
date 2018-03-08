@@ -23,6 +23,19 @@ namespace Assets.Scripts.Game
                 public static int CenterCirleRadius = 20;
             }
 
+            public class Defense
+            {
+                //Blue
+                public static float DefenderLineAction = -45f;
+
+            }
+
+            public class Offense
+            {
+                //Blue
+                public static float OffensiveWait = 35f;
+            }
+
             public static float GoalHeight = 40;
         }
 
