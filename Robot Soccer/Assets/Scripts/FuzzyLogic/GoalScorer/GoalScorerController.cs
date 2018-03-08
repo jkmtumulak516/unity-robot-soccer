@@ -15,12 +15,16 @@ public class GoalScorerController : MonoBehaviour
     public Text _score_text;
     int score = 0;
     public GameObject Ball;
-    
+
+    bool IsOptimizationMode = false;
     // Use this for initialization
     void Start ()
     {
         int NumberOfRobots = GameObject.Find("ConfigurationHolder")?.GetComponent<ConfigurationHolder>()?.c?.NumberOfRobots ?? 3;
-
+        if(GameObject.Find("ConfigurationHolder")?.GetComponent<ConfigurationHolder>() == null)
+        {
+            IsOptimizationMode = true;
+        }
         GoalXDistance xDistance;
         GoalYDistance yDistance;
         var consequence = new GoalConsequence(3);
@@ -61,7 +65,7 @@ public class GoalScorerController : MonoBehaviour
         // output whether the ball scored or not
         Output = _scorer.GetConsequence(inputX, inputY);
 
-        if(Output >= 85)
+        if(Output >= 85 && !IsOptimizationMode)
         {
             _score_text.text = ++score + "";
             _sim.ResetSimulation();

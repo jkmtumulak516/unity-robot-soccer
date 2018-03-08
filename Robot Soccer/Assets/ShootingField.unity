@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -397,7 +397,14 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114097181429044936, guid: 196147798b38f4249b8b17b2ed8b788b,
+        type: 2}
+      propertyPath: Ball
+      value: 
+      objectReference: {fileID: 1254080725}
+    m_RemovedComponents:
+    - {fileID: 114156723892153258, guid: 196147798b38f4249b8b17b2ed8b788b, type: 2}
+    - {fileID: 114097181429044936, guid: 196147798b38f4249b8b17b2ed8b788b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 196147798b38f4249b8b17b2ed8b788b, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1384147588 stripped
@@ -416,7 +423,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb8fd0060ec2713439e80bbc724ad671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sim: {fileID: 0}
   Output: 0
+  _score_text: {fileID: 0}
   Ball: {fileID: 1254080725}
 --- !u!1 &1844609711
 GameObject:
@@ -458,8 +467,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad3c7db202578c4d96623b05eef3a3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FilePath: C:\Users\JKMT\Desktop\OptimizationShooting.txt
-  TimeScale: 20
+  FilePath: C:\Users\King\Desktop\Optimizer.txt
+  TimeScale: 10
   IsTrialRunning: 0
   TrialCount: 0
   GenerationCount: 0
