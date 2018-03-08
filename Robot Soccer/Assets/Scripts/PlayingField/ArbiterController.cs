@@ -9,10 +9,11 @@ public class ArbiterController : MonoBehaviour {
 
     ArbiterFLS ArbiterFls;
     public enum ACTION : int { DRIBBLE, PASS, SHOOT}
+    public ACTION Action;
     public RobotCarController ArbiterRobot;
     public GameObject Ball;
     public Collider[] hits;
-    public float RobotBallRadius = 7;
+    public float RobotBallRadius = 1;
     public LayerMask SphereCastLayerMask;
     Vector3 SphereLoc;
     
@@ -38,15 +39,73 @@ public class ArbiterController : MonoBehaviour {
                 var ballY = Ball.transform.position.x;
                 var priority = ArbiterFls.GetPriority(shoot, pass, ballX, ballY);
 
-                Debug.Log("Shoot: " + shoot);
-                Debug.Log("Pass: " + pass);
-                Debug.Log("BallX: " + ballX);
-                Debug.Log("BallY: " + ballY);
-                Debug.Log("Result: " + priority);
+                if(priority > 68)
+                {
+                    Action = ACTION.SHOOT;
+                    var ArbiterBallOrientation = Angle.ComputeRelativeAngle(ArbiterRobot.transform.eulerAngles.y, ArbiterRobot.transform.position.x, ArbiterRobot.transform.position.y, Ball.transform.position.x, Ball.transform.position.y);
+                    var ArbiterGoalOrientation = Angle.ComputeRelativeAngle(ArbiterRobot.transform.eulerAngles.y, ArbiterRobot.transform.position.x, ArbiterRobot.transform.position.y, ArbiterRobot.Team.OpponentGoal.transform.position.x, ArbiterRobot.Team.OpponentGoal.transform.position.y);
+                    //Ball is front of robot
+                    if (Math.Abs(ArbiterBallOrientation) <= 22)
+                    {
+                        
+                        
+                        if (Math.Abs(ArbiterGoalOrientation) <= 20)
+                        {
+                            ArbiterRobot.Shove = true;
+                        }
+                        else
+                        {
+                            ArbiterRobot.Spin = (ArbiterGoalOrientation < 0) ? -1 : 1;
+
+                        }
+                    }
+                    else
+                    {
+                        ArbiterRobot.Spin = (ArbiterGoalOrientation < 0) ? -1 : 1;
+                    }
+
+                } else if (priority > 34)
+                {
+                    Action = ACTION.PASS;
+                    var ArbiterBallOrientation = Angle.ComputeRelativeAngle(ArbiterRobot.transform.eulerAngles.y, ArbiterRobot.transform.position.x, ArbiterRobot.transform.position.y, Ball.transform.position.x, Ball.transform.position.y);
+                    
+                    //Ball is front of robot
+                    if (Math.Abs(ArbiterBallOrientation) <= 10)
+                    {
+                        if(bestTeamMate != null)
+                        {
+                            var ArbiterTeamMateOrientation = Angle.ComputeRelativeAngle(ArbiterRobot.transform.eulerAngles.y, ArbiterRobot.transform.position.x, ArbiterRobot.transform.position.y, bestTeamMate.gameObject.transform.position.x, bestTeamMate.gameObject.transform.position.y);
+                            if(Math.Abs(ArbiterTeamMateOrientation) <= 20)
+                            {
+                                ArbiterRobot.Shove = true;
+                            }
+                            else
+                            {
+                                ArbiterRobot.Spin = (ArbiterTeamMateOrientation < 0) ? -1 : 1;
+                                
+                            }
+                        }
+                    }else
+                    {
+                        if (bestTeamMate != null)
+                        {
+                            var ArbiterTeamMateOrientation = Angle.ComputeRelativeAngle(ArbiterRobot.transform.eulerAngles.y, ArbiterRobot.transform.position.x, ArbiterRobot.transform.position.y, bestTeamMate.gameObject.transform.position.x, bestTeamMate.gameObject.transform.position.y);
+                            ArbiterRobot.Spin = (ArbiterTeamMateOrientation < 0) ? -1 : 1;
+                        }
+                    }
+                }
+                else
+                {
+                    Action = ACTION.DRIBBLE;
+                    ArbiterRobot.DestX = ArbiterRobot.Team.OpponentGoal.transform.position.x;
+                    ArbiterRobot.DestY = ArbiterRobot.Team.OpponentGoal.transform.position.z;
+
+                }
                 
             }
             else
             {
+
                 //Move towards ball
                 ArbiterRobot.DestX = Ball.transform.position.x;
                 ArbiterRobot.DestY = Ball.transform.position.z;
@@ -64,6 +123,7 @@ public class ArbiterController : MonoBehaviour {
         {
             foreach(var t in teamMates)
             {
+                
                 var status = GetStatus(t.transform.position);
                 if(status > degree)
                 {
@@ -110,15 +170,15 @@ public class ArbiterController : MonoBehaviour {
     }
 
 
-    private void OnDrawGizmos()
-    {
-        //if (isShootHit)
-        //{
-        //    Gizmos.color = Color.yellow;
-        //    Gizmos.DrawSphere(SphereLoc, 15f);
-        //}
+    //private void OnDrawGizmos()
+    //{
+    //    //if (isShootHit)
+    //    //{
+    //    //    Gizmos.color = Color.yellow;
+    //    //    Gizmos.DrawSphere(SphereLoc, 15f);
+    //    //}
 
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(this.ArbiterRobot.transform.forward * 75f, 75f);
-    }
+    //    Gizmos.color = Color.yellow;
+    //    Gizmos.DrawWireSphere(this.ArbiterRobot.transform.forward * 75f, 75f);
+    //}
 }

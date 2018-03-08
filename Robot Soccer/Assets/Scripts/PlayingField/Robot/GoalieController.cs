@@ -33,6 +33,7 @@ public class GoalieController : MonoBehaviour
         _robot_controller = GetComponent<RobotCarController>();
         _robot_controller.Driver = new GoalieDriver(_robot_controller);
         _robot_controller.transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+        _robot_controller.IsGoalie = true;
         Ball = GameObject.Find("Soccer Ball");
         Goal = (_robot_controller.Team.Team == TeamController.TEAM.RED) ? GameObject.Find("LeftRing") : GameObject.Find("RightRing");
         Config = GameObject.Find("ConfigurationHolder").GetComponent<ConfigurationHolder>();
@@ -106,6 +107,12 @@ public class GoalieController : MonoBehaviour
                 yOutput = _strategy_4.GetOutput(Ball.transform.position.x, transform.position.x);
                 break;
             default: throw new Exception("Invalid Strategy!");
+        }
+
+        var hits = Physics.OverlapSphere(this.transform.position, 8f, 1 << 10);
+        if(hits.Length == 1)
+        {
+            _robot_controller.Spin = 1;
         }
 
         _robot_controller.DestX = yOutput;

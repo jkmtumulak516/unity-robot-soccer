@@ -18,9 +18,9 @@ public class TeamController : MonoBehaviour {
     public List<GameObject> Midfielders;
     public List<GameObject> Forward;
     public GameObject Goalie;
-
-    public ArbiterController ArbiterController;
     
+    public ArbiterController ArbiterController;
+    public int NoOfRobots;
 	// Use this for initialization
 	void Start () {
         
@@ -38,6 +38,7 @@ public class TeamController : MonoBehaviour {
         Midfielders = new List<GameObject>();
         Forward = new List<GameObject>();
         Team = teamColor;
+        this.NoOfRobots = noOfRobots;
         Quaternion q = Quaternion.identity;
         int m = -1;
         if (Team == TEAM.RED)
@@ -135,10 +136,29 @@ public class TeamController : MonoBehaviour {
         if(Strategy == STRATEGY.OFFENSE)
         {
             ArbiterController.ArbiterRobot = nearestRobot;
-            //Set rest position except arbiter
-        }else
+            if (nearestRobot != Defenders[0]) { 
+                Defenders[0].GetComponent<RobotCarController>().DestY = (Team == TEAM.BLUE)? League.Small.Offense.OffensiveWait : League.Small.Offense.OffensiveWait * -1;
+                Defenders[0].GetComponent<RobotCarController>().DestX = 0;
+            }else if(nearestRobot != Defenders[1])
+            {
+                Forward[0].GetComponent<RobotCarController>().DestY = (Team == TEAM.BLUE) ? -League.Small.Offense.OffensiveWait : League.Small.Offense.OffensiveWait;
+                Forward[0].GetComponent<RobotCarController>().DestX = 0;
+            }
+        }
+        else
         {
-            //Defense stuff
+            switch (NoOfRobots)
+            {
+                case 3:
+                    Defenders[0].GetComponent<RobotCarController>().DestY = (Team == TEAM.BLUE) ? League.Small.Defense.DefenderLineAction : League.Small.Defense.DefenderLineAction * -1;
+                    Forward[0].GetComponent<RobotCarController>().DestX = Ball.transform.position.x;
+                    Forward[0].GetComponent<RobotCarController>().DestY = Ball.transform.position.z;
+                    break;
+                case 5:
+                    break;
+                case 11:
+                    break;
+            }
         }
     }
     
