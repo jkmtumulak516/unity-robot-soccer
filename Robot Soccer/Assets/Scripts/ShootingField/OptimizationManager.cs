@@ -80,7 +80,7 @@ public class OptimizationManager : MonoBehaviour
             else
             {
                 using (var file = new StreamWriter(FilePath, true))
-                    file.WriteLine(GenerationCount + "," + leftRules.Average(x => x.Fitness));
+                    file.WriteLine(GenerationCount + "," + leftRules.Average(x => x.Fitness) + "," + leftRules.Max(x => x.Fitness) + "," + leftRules.Min(x => x.Fitness));
 
                 Debug.Log("BREEDING!");
                 leftRules = GeneticAlgorithm.BreedNewGeneration(leftRules, MutationChance);

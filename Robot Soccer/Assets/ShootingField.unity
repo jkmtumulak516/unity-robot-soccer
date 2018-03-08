@@ -222,7 +222,7 @@ MonoBehaviour:
   TrialActive: 0
   IsGoaled: 0
   IsTimedOut: 0
-  TimeLimit: 7
+  TimeLimit: 10
   GoalThreshold: 85
   Robot: {fileID: 0}
   Ball: {fileID: 1254080725}
@@ -315,15 +315,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4935240531098310, guid: ec3e8f3ed27e2244caaedaf589590a03, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 12.8
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4935240531098310, guid: ec3e8f3ed27e2244caaedaf589590a03, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.04
+      value: 1.17
       objectReference: {fileID: 0}
     - target: {fileID: 4935240531098310, guid: ec3e8f3ed27e2244caaedaf589590a03, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -41.6
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 4935240531098310, guid: ec3e8f3ed27e2244caaedaf589590a03, type: 2}
       propertyPath: m_LocalRotation.x
@@ -459,11 +459,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FilePath: C:\Users\JKMT\Desktop\OptimizationShooting.txt
-  TimeScale: 15
+  TimeScale: 20
   IsTrialRunning: 0
   TrialCount: 0
   GenerationCount: 0
-  PopulationSize: 30
-  GenerationLimit: 50
-  MutationChance: 0.11
+  PopulationSize: 40
+  GenerationLimit: 150
+  MutationChance: 0.13
   Trial: {fileID: 235674970}

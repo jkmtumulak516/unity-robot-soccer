@@ -23,26 +23,50 @@ namespace Assets.Scripts.Game
 
             public static RobotAndBall[] Positions = new RobotAndBall[]
             {
+                //new RobotAndBall(
+                //    new Vector3(0f, 1.25f, 15f), 
+                //    new Vector3(0f, 1.25f, 0f), 
+                //    Quaternion.identity),
                 new RobotAndBall(
-                    new Vector3(0f, 2.8f, 8f), 
-                    new Vector3(0f, 2.8f, 0f), 
-                    Quaternion.identity),
-                new RobotAndBall(
-                    new Vector3(-15f, 2.8f, -30f),
-                    new Vector3(15f, 2.8f, -30f),
+                    new Vector3(-10f, 1.25f, -30f),
+                    new Vector3(30f, 1.25f, -30f),
                     Quaternion.Euler(0f, 90f, 0f)),
                 new RobotAndBall(
-                    new Vector3(15f, 2.8f, -30f),
-                    new Vector3(-15f, 2.8f, -30f),
+                    new Vector3(10f, 1.25f, -30f),
+                    new Vector3(-30f, 1.25f, -30f),
                     Quaternion.Euler(0f, 270f, 0f)),
                 new RobotAndBall(
-                    new Vector3(-30f, 2.8f, -20f),
-                    new Vector3(-30f, 2.8f, -40f),
+                    new Vector3(-30f, 1.25f, -20f),
+                    new Vector3(-30f, 1.25f, -40f),
                     Quaternion.identity),
                 new RobotAndBall(
-                    new Vector3(30f, 2.8f, -20f),
-                    new Vector3(30f, 2.8f, -40f),
+                    new Vector3(30f, 1.25f, -20f),
+                    new Vector3(30f, 1.25f, -40f),
                     Quaternion.identity),
+                new RobotAndBall(
+                    new Vector3(55f, 1.25f, -5f),
+                    new Vector3(40f, 1.25f, -20f),
+                    Quaternion.Euler(0f, 315f, 0f)),
+                new RobotAndBall(
+                    new Vector3(-55f, 1.25f, -5f),
+                    new Vector3(-40f, 1.25f, -20f),
+                    Quaternion.Euler(0f, 45f, 0f)),
+                new RobotAndBall(
+                    new Vector3(-30f, 1.25f, 20f),
+                    new Vector3(0f, 1.25f, -30f),
+                    Quaternion.identity),
+                new RobotAndBall(
+                    new Vector3(30f, 1.25f, 20f),
+                    new Vector3(0f, 1.25f, -30f),
+                    Quaternion.identity),
+                new RobotAndBall(
+                    new Vector3(-20f, 1.25f, -40f),
+                    new Vector3(-40f, 1.25f, -50f),
+                    Quaternion.Euler(0f, 270f, 0f)),
+                new RobotAndBall(
+                    new Vector3(20f, 1.25f, -40f),
+                    new Vector3(40f, 1.25f, -50f),
+                    Quaternion.Euler(0f, 90f, 0f))
             };
         }
     }
