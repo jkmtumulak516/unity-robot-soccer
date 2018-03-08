@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Assets.Scripts.FuzzyLogic.RobotMovement.FuzzySets
 {
-    class RelativeAngle : FuzzySet<IInputFuzzyMember>
+    public class RelativeAngle : FuzzySet<IInputFuzzyMember>
     {
         public RelativeAngle(int category) : base(category)
         {
@@ -43,7 +43,6 @@ namespace Assets.Scripts.FuzzyLogic.RobotMovement.FuzzySets
             _very_right = new LinearInput("Very right", this, 180, false, true, 50, 20);
             collection.Add(_very_right);
 
-
             return collection;
         }
 
@@ -54,6 +53,5 @@ namespace Assets.Scripts.FuzzyLogic.RobotMovement.FuzzySets
         public IInputFuzzyMember SlightlyRight { get { return _slightly_right; } }
         public IInputFuzzyMember Right { get { return _right; } }
         public IInputFuzzyMember VeryRight { get { return _very_right; } }
-
     }
 }

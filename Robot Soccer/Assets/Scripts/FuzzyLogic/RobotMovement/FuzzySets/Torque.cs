@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Assets.Scripts.FuzzyLogic.RobotMovement.FuzzySets
 {
-    class Torque : FuzzySet<IResultFuzzyMember>
+    public class Torque : FuzzySet<IResultFuzzyMember>
     {
         public Torque(int category) : base(category)
         {

@@ -12,17 +12,17 @@ public class GoalScorerController : MonoBehaviour
     public float Output;
 
     public GameObject Ball;
-    ConfigurationHolder Config;
+    
     // Use this for initialization
     void Start ()
     {
-        Config = GameObject.Find("ConfigurationHolder").GetComponent<ConfigurationHolder>();
+        int NumberOfRobots = GameObject.Find("ConfigurationHolder")?.GetComponent<ConfigurationHolder>()?.c?.NumberOfRobots ?? 3;
 
         GoalXDistance xDistance;
         GoalYDistance yDistance;
         var consequence = new GoalConsequence(3);
 
-        switch (Config.c.NumberOfRobots)
+        switch (NumberOfRobots)
         {
             case 3:
                 xDistance = new SmallGoalXDistance(1);
