@@ -23,7 +23,7 @@ namespace Assets.Scripts.FuzzyLogic.RobotMovement.FuzzySets
             var gm = GameObject.Find("ConfigurationHolder").GetComponent<ConfigurationHolder>();
             var increment = gm.c.FieldWidth / 4;
             var peak = 0f;
-            var halfWidth = increment / 2;
+            var halfWidth = increment;
 
             _very_near = new LinearInput("Very Near", this, peak, true, false, halfWidth, 0);
             collection.Add(_very_near);
