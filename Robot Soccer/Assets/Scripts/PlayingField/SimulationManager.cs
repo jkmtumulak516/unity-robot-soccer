@@ -69,7 +69,15 @@ public class SimulationManager : MonoBehaviour {
 
     public void ResetSimulation()
     {
-        
+        RedTeam.GetComponent<TeamController>().DeleteAllChildren();
+        BlueTeam.GetComponent<TeamController>().DeleteAllChildren();
+
+        RedTeam.GetComponent<TeamController>().Initialize(TEAM.RED, ConfigurationHolder.c.NumberOfRobots);
+        BlueTeam.GetComponent<TeamController>().Initialize(TEAM.BLUE, ConfigurationHolder.c.NumberOfRobots);
+
+        RedTeam.GetComponent<TeamController>().Ball.transform.position = new Vector3(0f, 2.7f, 0f);
+        RedTeam.GetComponent<TeamController>().Ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        RedTeam.GetComponent<TeamController>().Ball.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
     }
 
@@ -82,13 +90,7 @@ public class SimulationManager : MonoBehaviour {
         IsStart = false;
         IsPaused = false;
 
-        RedTeam.GetComponent<TeamController>().DeleteAllChildren();
-        BlueTeam.GetComponent<TeamController>().DeleteAllChildren();
-
-        RedTeam.GetComponent<TeamController>().Initialize(TEAM.RED, ConfigurationHolder.c.NumberOfRobots);
-        BlueTeam.GetComponent<TeamController>().Initialize(TEAM.BLUE, ConfigurationHolder.c.NumberOfRobots);
-
-        RedTeam.GetComponent<TeamController>().Ball.transform.position = new Vector3(0f, 2.7f, 0f);
+        ResetSimulation();
         RedTeam.GetComponent<TeamController>().Ball.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 }

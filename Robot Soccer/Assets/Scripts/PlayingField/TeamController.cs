@@ -136,14 +136,28 @@ public class TeamController : MonoBehaviour {
         if(Strategy == STRATEGY.OFFENSE)
         {
             ArbiterController.ArbiterRobot = nearestRobot;
-            if (nearestRobot != Defenders[0]) { 
-                Defenders[0].GetComponent<RobotCarController>().DestY = (Team == TEAM.BLUE)? League.Small.Offense.OffensiveWait : League.Small.Offense.OffensiveWait * -1;
-                Defenders[0].GetComponent<RobotCarController>().DestX = 0;
-            }else if(nearestRobot != Defenders[1])
+            switch (NoOfRobots)
             {
-                Forward[0].GetComponent<RobotCarController>().DestY = (Team == TEAM.BLUE) ? -League.Small.Offense.OffensiveWait : League.Small.Offense.OffensiveWait;
-                Forward[0].GetComponent<RobotCarController>().DestX = 0;
+                case 3:
+                    if (nearestRobot != Defenders[0])
+                    {
+                        Defenders[0].GetComponent<RobotCarController>().DestY = (Team == TEAM.BLUE) ? League.Small.Offense.OffensiveWait : League.Small.Offense.OffensiveWait * -1;
+                        Defenders[0].GetComponent<RobotCarController>().DestX = 0;
+                    }
+                    else
+                    {
+
+                        Forward[0].GetComponent<RobotCarController>().DestY = (Team == TEAM.BLUE) ? League.Small.Offense.OffensiveWait : League.Small.Offense.OffensiveWait * -1;
+                        Forward[0].GetComponent<RobotCarController>().DestX = 0;            
+                    }
+                    break;
+                case 5:
+                    break;
+                case 11:
+                    break;
             }
+            
+            
         }
         else
         {
@@ -151,6 +165,7 @@ public class TeamController : MonoBehaviour {
             {
                 case 3:
                     Defenders[0].GetComponent<RobotCarController>().DestY = (Team == TEAM.BLUE) ? League.Small.Defense.DefenderLineAction : League.Small.Defense.DefenderLineAction * -1;
+                    Defenders[0].GetComponent<RobotCarController>().DestX = Ball.transform.position.x;
                     Forward[0].GetComponent<RobotCarController>().DestX = Ball.transform.position.x;
                     Forward[0].GetComponent<RobotCarController>().DestY = Ball.transform.position.z;
                     break;

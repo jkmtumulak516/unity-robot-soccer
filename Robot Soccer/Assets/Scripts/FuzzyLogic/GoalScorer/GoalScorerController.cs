@@ -4,13 +4,16 @@ using Assets.Scripts.FuzzyLogic.GoalScorer.FuzzySets.XDistances;
 using Assets.Scripts.FuzzyLogic.GoalScorer.FuzzySets.YDistances;
 using Assets.Scripts.FuzzyLogic.GoalScorer.FuzzySystems;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GoalScorerController : MonoBehaviour
 {    
     private GoalScorer _scorer;
-
+    public SimulationManager _sim;
     public float Output;
 
+    public Text _score_text;
+    int score = 0;
     public GameObject Ball;
     
     // Use this for initialization
@@ -57,5 +60,11 @@ public class GoalScorerController : MonoBehaviour
 
         // output whether the ball scored or not
         Output = _scorer.GetConsequence(inputX, inputY);
+
+        if(Output >= 85)
+        {
+            _score_text.text = ++score + "";
+            _sim.ResetSimulation();
+        }
 	}
 }

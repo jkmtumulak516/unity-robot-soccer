@@ -130,6 +130,7 @@ public class ArbiterController : MonoBehaviour {
                     degree = status;
                     bestTeamMate = t;
                 }
+                
             }
         }
         return degree;
